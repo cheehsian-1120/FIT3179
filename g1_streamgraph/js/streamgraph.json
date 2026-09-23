@@ -1,0 +1,136 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "The Rising Tide: Four Decades of Cardiovascular Mortality (1980-2024)",
+        "subtitle": "Age-standardised death rates per 100,000 population.",
+        "font": "Georgia, serif",
+        "fontSize": 35,
+        "subtitleFontSize": 20,
+        "subtitleColor": "#555",
+        "anchor": "start",
+        "offset": 20
+    },
+    "width": "container",
+    "height": "container",
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "url": "data/graph_1.csv"
+    },
+    "transform": [
+        {
+            "fold": [
+                "Coronary Heart Disease",
+                "Stroke",
+                "Heart Failure and Cardiomyopathy",
+                "Atrial Fibrillation",
+                "Peripheral Arterial",
+                "Rheumatic Heart Disease",
+                "Congenital Heart Disease"
+            ],
+            "as": [
+                "Original_Condition",
+                "Mortality_Rate"
+            ]
+        },
+        {
+            "calculate": "datum.Original_Condition == 'Coronary Heart Disease' || datum.Original_Condition == 'Stroke' || datum.Original_Condition == 'Heart Failure and Cardiomyopathy' ? datum.Original_Condition : 'Other'",
+            "as": "Condition"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Mortality_Rate",
+                    "as": "Mortality_Rate"
+                }
+            ],
+            "groupby": [
+                "Year",
+                "Condition"
+            ]
+        }
+    ],
+    "mark": {
+        "type": "area",
+        "line": true,
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "title": "Year",
+            "axis": {
+                "format": "%Y",
+                "tickCount": 10,
+                "grid": false,
+                "labelAngle": 0,
+                "titleFontSize": 20,
+                "labelFontSize": 16
+            }
+        },
+        "y": {
+            "field": "Mortality_Rate",
+            "type": "quantitative",
+            "stack": "center",
+            "axis": null
+        },
+        "color": {
+            "field": "Condition",
+            "type": "nominal",
+            "scale": {
+                "domain": [
+                    "Coronary Heart Disease", 
+                    "Stroke", 
+                    "Heart Failure and Cardiomyopathy",
+                    "Other"
+                ],
+                "range": [
+                    "#fa4d56", 
+                    "#9f1853", 
+                    "#ee538b", 
+                    "#570408" 
+                ]
+            },
+            "legend": {
+                "title": "Underlying Cause",
+                "orient": "top-right",
+                "offset": 0,
+                "fillColor": "rgba(255, 255, 255, 0.9)",
+                "padding": 2,
+                "titleFontSize": 20,
+                "labelFontSize": 18,
+                "symbolSize": 150,
+                "labelLimit": 300
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Year",
+                "type": "temporal",
+                "format": "%Y",
+                "title": "Year"
+            },
+            {
+                "field": "Condition",
+                "type": "nominal",
+                "title": "Disease Category"
+            },
+            {
+                "field": "Mortality_Rate",
+                "type": "quantitative",
+                "format": ".1f",
+                "title": "Age-Standardise Rate"
+            }
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "font": "sans-serif"
+    }
+}
