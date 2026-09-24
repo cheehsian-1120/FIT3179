@@ -1,0 +1,96 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "The Comorbidity Web: Heart Disease & Chronic Illness",
+        "subtitle": "Probability (%) of suffering from a secondary condition given a primary diagnosis",
+        "font": "Georgia, serif",
+        "fontSize": 35,
+        "subtitleFontSize": 20,
+        "subtitleColor": "#555",
+        "anchor": "start",
+        "offset": 30
+    },
+    "width": "container",
+    "height": "container",
+    "data": {
+        "url": "graph_3.csv"
+    },
+    "transform": [
+        {
+            "fold": [
+                "Arthritis", "Asthma", "Dorsopathies", "Cancer", "Chronic Obstructive Pulmonary Disease", 
+                "Diabetes Mellitus", "Heart, Stroke and Vascular Disease", 
+                "Kidney Disease", "Mental and Behavioural Conditions", "Osteoporosis"
+            ],
+            "as": ["Secondary_Condition", "Probability"]
+        },
+        {
+            "calculate": "indexof(['Arthritis', 'Asthma', 'Dorsopathies', 'Cancer', 'Chronic Obstructive Pulmonary Disease', 'Diabetes Mellitus', 'Heart, Stroke and Vascular Disease', 'Kidney Disease', 'Mental and Behavioural Conditions', 'Osteoporosis'], datum['Comorbidity Condition'])",
+            "as": "Primary_Index"
+        },
+        {
+            "calculate": "indexof(['Arthritis', 'Asthma', 'Dorsopathies', 'Cancer', 'Chronic Obstructive Pulmonary Disease', 'Diabetes Mellitus', 'Heart, Stroke and Vascular Disease', 'Kidney Disease', 'Mental and Behavioural Conditions', 'Osteoporosis'], datum.Secondary_Condition)",
+            "as": "Secondary_Index"
+        },
+        {
+            "filter": "datum.Primary_Index > datum.Secondary_Index"
+        }
+    ],
+    "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 2
+    },
+    "encoding": {
+        "x": {
+            "field": "Secondary_Condition",
+            "type": "nominal",
+            "title": null,
+            "sort": ["Arthritis", "Asthma", "Dorsopathies", "Cancer", "Chronic Obstructive Pulmonary Disease", "Diabetes Mellitus", "Heart, Stroke and Vascular Disease", "Kidney Disease", "Mental and Behavioural Conditions", "Osteoporosis"],
+            "axis": {
+                "labelAngle": -45,
+                "labelFontSize": 16,
+                "labelLimit": 500,
+                "domain": false,
+                "ticks": false
+            }
+        },
+        "y": {
+            "field": "Comorbidity Condition",
+            "type": "nominal",
+            "title": null,
+            "sort": ["Arthritis", "Asthma", "Dorsopathies", "Cancer", "Chronic Obstructive Pulmonary Disease", "Diabetes Mellitus", "Heart, Stroke and Vascular Disease", "Kidney Disease", "Mental and Behavioural Conditions", "Osteoporosis"],
+            "axis": {
+                "labelFontSize": 16,
+                "labelLimit": 500,
+                "domain": false,
+                "ticks": false
+            }
+        },
+        "color": {
+            "field": "Probability",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "reds",
+                "domain": [0, 50]
+            },
+            "legend": {
+                "title": "Probability (%)",
+                "orient": "right",
+                "titleFontSize": 20,
+                "labelFontSize": 16,
+                "gradientLength": 200
+            }
+        },
+        "tooltip": [
+            {"field": "Comorbidity Condition", "title": "Primary Condition"},
+            {"field": "Secondary_Condition", "title": "Secondary Condition"},
+            {"field": "Probability", "type": "quantitative", "format": ".1f", "title": "Probability (%)"}
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

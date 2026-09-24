@@ -1,0 +1,123 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "The 33-Year Health Trajectory",
+        "subtitle": "Cardiovascular disease rates with 95% confidence intervals (1990-2023)",
+        "font": "Georgia, serif",
+        "fontSize": 35,
+        "subtitleFontSize": 20,
+        "subtitleColor": "#555",
+        "anchor": "start",
+        "offset": 20
+    },
+    "data": {
+        "url": "macro.csv"
+    },
+    "transform": [
+        {"filter": "datum.metric == 'Rate'"},
+        {"filter": "datum.cause == 'Cardiovascular diseases'"},
+        {"filter": "datum.year >= 1990"},
+        {
+            "calculate": "datum.measure == 'DALYs (Disability-Adjusted Life Years)' ? 6000 : 0",
+            "as": "daly_bound"
+        }
+    ],
+    "facet": {
+        "field": "measure",
+        "type": "nominal",
+        "sort": ["Incidence", "Prevalence", "Deaths", "DALYs (Disability-Adjusted Life Years)"],
+        "title": null,
+        "header": {
+            "labelFont": "Georgia, serif",
+            "labelFontSize": 20,
+            "labelFontWeight": "bold",
+            "labelColor": "#2F4F4F"
+        }
+    },
+    "columns": 2,
+    "spec": {
+        "width": 600,
+        "height": 310,
+        "encoding": {
+            "x": {
+                "field": "year",
+                "type": "quantitative",
+                "axis": {
+                    "title": "Year",
+                    "format": "d",
+                    "labelFontSize": 12,
+                    "titleFontSize": 14,
+                    "grid": false,
+                    "tickCount": 6
+                }
+            }
+        },
+        "layer": [
+            {
+                "mark": {
+                    "type": "area",
+                    "opacity": 0.2,
+                    "color": "#E04E39"
+                },
+                "encoding": {
+                    "y": {
+                        "field": "lower",
+                        "type": "quantitative"
+                    },
+                    "y2": {
+                        "field": "upper"
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "line",
+                    "color": "#990000",
+                    "strokeWidth": 2.5
+                },
+                "encoding": {
+                    "y": {
+                        "field": "val",
+                        "type": "quantitative",
+                        "axis": {
+                            "title": "Rate (per 100,000)",
+                            "labelFontSize": 12,
+                            "titleFontSize": 13,
+                            "grid": true,
+                            "tickCount": 6
+                        }
+                    },
+                    "tooltip": [
+                        {"field": "year", "type": "quantitative", "title": "Year"},
+                        {"field": "measure", "type": "nominal", "title": "Metric"},
+                        {"field": "val", "type": "quantitative", "title": "Estimate Rate", "format": ".1f"},
+                        {"field": "lower", "type": "quantitative", "title": "Lower Bound", "format": ".1f"},
+                        {"field": "upper", "type": "quantitative", "title": "Upper Bound", "format": ".1f"}
+                    ]
+                }
+            },
+            {
+                "mark": {
+                    "type": "point",
+                    "opacity": 0
+                },
+                "encoding": {
+                    "y": {
+                        "field": "daly_bound",
+                        "type": "quantitative"
+                    }
+                }
+            }
+        ]
+    },
+    "resolve": {
+        "scale": {
+            "y": "independent"
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

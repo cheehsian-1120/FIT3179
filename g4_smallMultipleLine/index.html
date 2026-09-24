@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Burden: Small Multiples</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+    
+    <link rel="stylesheet" href="macro.csv">
+</head>
+<body>
+    <div class="visualisation-container">
+        <!-- Chart 6: Small Multiples -->
+        <div class="chart-section">
+            <div id="smallMultipleLine"></div>
+        </div>
+    </div>
+
+    <script>
+        var spec = "smallMultipleLine.json";
+        vegaEmbed('#smallMultipleLine', spec, { actions: false }).catch(console.error);
+    </script>
+</body>
+</html>

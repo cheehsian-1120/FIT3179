@@ -1,0 +1,31 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+.visualisation-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    display: block;
+    justify-content: center; /* Centers the whole 2x2 grid */
+}
+
+.chart-section {
+    width: 100%;
+    display: block;
+    justify-content: center;
+}
+
+/* Custom Tooltip Styling */
+#vg-tooltip-element {
+    font-size: 14px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    border: 1px solid #ddd !important;
+    white-space: nowrap !important;
+}

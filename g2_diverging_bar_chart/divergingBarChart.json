@@ -1,0 +1,99 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "The Age and Gender Gap in Cardiovascular Health",
+        "subtitle": "Estimated population suffering from heart, stroke, and vascular diseases (2022)",
+        "font": "Georgia, serif",
+        "fontSize": 35,
+        "subtitleFontSize": 20,
+        "subtitleColor": "#555",
+        "anchor": "start",
+        "offset": 20
+    },
+    "width": 1500,
+    "height": "container",
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "url": "graph_2.csv"
+    },
+    "transform": [
+        {
+            "calculate": "datum.Gender == 'Males' ? -datum.Population : datum.Population",
+            "as": "Signed_Population"
+        }
+    ],
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "y": {
+            "field": "Age Group",
+            "type": "ordinal",
+            "sort": ["0-14", "15-24", "25-34", "35-44", "45-54", "55-64", "65 years and over"],
+            "axis": {
+                "title": "Age Group",
+                "titleFontSize": 20,
+                "labelFontSize": 16,
+                "domain": false,
+                "ticks": false,
+                "offset": 10
+            }
+        },
+        "x": {
+            "field": "Signed_Population",
+            "type": "quantitative",
+            "title": "Population",
+            "axis": {
+                "labelExpr": "abs(datum.value)",
+                "titleFontSize": 20,
+                "labelFontSize": 16,
+                "grid": true,
+                "tickCount": 6
+            }
+        },
+        "color": {
+            "field": "Gender",
+            "type": "nominal",
+            "scale": {
+                "domain": ["Males", "Females"],
+                "range": ["#2F4F4F", "#E04E39"]
+            },
+            "legend": {
+                "title": "Gender",
+                "orient": "top-right",
+                "offset": 0,
+                "fillColor": "rgba(255, 255, 255, 0.9)",
+                "padding": 5,
+                "titleFontSize": 20,
+                "labelFontSize": 18,
+                "symbolSize": 150
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Gender",
+                "type": "nominal"
+            },
+            {
+                "field": "Age Group",
+                "type": "ordinal"
+            },
+            {
+                "field": "Population",
+                "type": "quantitative",
+                "format": ",",
+                "title": "Total Affected"
+            }
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "font": "sans-serif"
+    }
+}
