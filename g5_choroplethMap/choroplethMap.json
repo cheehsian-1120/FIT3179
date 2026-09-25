@@ -1,0 +1,117 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "The National Footprint: Heart Disease by LGA",
+        "subtitle": "Age-Standardised Rate (ASR) per 100,000 people",
+        "font": "Georgia, serif",
+        "fontSize": 35,
+        "subtitleFontSize": 20,
+        "subtitleColor": "#990000",
+        "anchor": "middle",
+        "offset": 20
+    },
+    "width": 800,
+    "height": 600,
+    "projection": {
+        "type": "mercator",
+        "center": [134, -28], 
+        "scale": 860
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "australia_lga.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "LGA_2021_AUST_GDA2020"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.properties.STE_NAME21 != 'Other Territories' && datum.properties.STE_NAME21 != 'Outside Australia'"
+                },
+                {
+                    "lookup": "properties.LGA_CODE21",
+                    "from": {
+                        "data": {
+                            "url": "graph_4.csv"
+                        },
+                        "key": "LGA_Code",
+                        "fields": [
+                            "LGA_Name",
+                            "State",
+                            "Heart_Disease_ASR_100k"
+                        ]
+                    }
+                },
+                {
+                    "filter": "isValid(datum.State)"
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "stroke": "white",
+                "strokeWidth": 0.7
+            },
+            "encoding": {
+                "color": {
+                    "field": "Heart_Disease_ASR_100k",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "reds"
+                    },
+                    "legend": {
+                        "title": "Age-Standardize Rate (per 100k)",
+                        "orient": "bottom",
+                        "direction": "horizontal",
+                        "titleFontSize": 16,
+                        "labelFontSize": 13,
+                        "titleLimit": 500,
+                        "gradientLength": 300,
+                        "offset": 20
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "State",
+                        "title": "State"
+                    },
+                    {
+                        "field": "LGA_Name",
+                        "title": "Local Government Area"
+                    },
+                    {
+                        "field": "Heart_Disease_ASR_100k",
+                        "title": "Age-Standardize Rate",
+                        "format": ",.0f"
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "url": "australia_state.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "STE_2021_AUST_GDA2020"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.properties.STE_NAME21 != 'Other Territories' && datum.properties.STE_NAME21 != 'Outside Australia'"
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "fill": null,
+                "stroke": "black",
+                "strokeWidth": 0.4
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

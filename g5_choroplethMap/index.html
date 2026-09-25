@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choropleth Linked Map</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+    
+    <link rel="stylesheet" href="choroplethMap.css">
+</head>
+<body>
+    <div class="visualisation-container">
+        <div class="chart-section">
+            <div id="linkedMap"></div>
+        </div>
+    </div>
+
+    <script>
+        // Make sure you use the SVG renderer for maps! It is much sharper and handles hover events perfectly.
+        var spec = "choroplethMap.json";
+        vegaEmbed('#linkedMap', spec, { actions: false, renderer: 'svg' }).catch(console.error);
+    </script>
+</body>
+</html>
