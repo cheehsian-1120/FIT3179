@@ -39,3 +39,12 @@ body {
     font-size: 16px !important;
     margin-bottom: 4px !important;
 }
+
+#vg-tooltip-element td,
+#vg-tooltip-element td.key,
+#vg-tooltip-element td.value {
+    max-width: none !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: nowrap !important;
+}

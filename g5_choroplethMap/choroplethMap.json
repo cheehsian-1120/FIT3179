@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "The National Footprint: Heart Disease by LGA",
-        "subtitle": "Age-Standardised Rate (ASR) per 100,000 people",
+        "text": "The National Footprint: Heart Disease",
+        "subtitle": "Age-Standardised Rate (ASR) per 100,000 population",
         "font": "Georgia, serif",
         "fontSize": 35,
         "subtitleFontSize": 20,

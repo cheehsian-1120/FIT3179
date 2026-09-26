@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVD Hospitalisations vs Deaths</title>
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="hBarChart.css">
+
+    <!-- Vega and Vega-Lite Core Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+</head>
+<body>
+
+    <div class="visualisation-container">
+        <div class="chart-section">
+            <div id="barChart"></div>
+        </div>
+    </div>
+
+    <script>
+        // Path to your external JSON file
+        const spec = "hBarChart.json";
+        
+        // Embed the visualization into the div with id "barChart"
+        vegaEmbed('#barChart', spec, { "actions": false }).then(function(result) {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+    </script>
+
+</body>
+</html>

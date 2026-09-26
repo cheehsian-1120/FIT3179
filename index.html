@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVD State Level Choropleth Map</title>
+    
+    <!-- Vega & Vega-Lite Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="stateMap.css">
+</head>
+<body>
+
+    <div class="visualisation-container">
+        <div class="chart-section">
+            <div id="mapContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        const spec = "stateMap.json";
+        vegaEmbed('#mapContainer', spec, { "actions": false }).catch(console.error);
+    </script>
+
+</body>
+</html>

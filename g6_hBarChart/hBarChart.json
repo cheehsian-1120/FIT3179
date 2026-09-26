@@ -1,0 +1,200 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Cardiovascular Disease: Hospitalisations vs Deaths",
+        "subtitle": "Comparing total occurrences across major CVD subtypes",
+        "font": "Georgia, serif",
+        "fontSize": 35,
+        "subtitleFontSize": 20,
+        "subtitleColor": "#555",
+        "anchor": "middle",
+        "offset": 20
+    },
+    "data": {
+        "url": "hBarChart.csv"
+    },
+    "spacing": 60,
+    "hconcat": [
+        {
+            "title": {
+                "text": "Hospitalisations",
+                "fontSize": 23,
+                "font": "Georgia, serif",
+                "color": "#4a4d4d",
+                "offset": 10
+            },
+            "width": 700,
+            "height": 600,
+            "layer": [
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "y": {
+                            "field": "Cardiovascular Disease Subtype",
+                            "type": "nominal",
+                            "title": null,
+                            "sort": "-x",
+                            "axis": {
+                                "labelFontSize": 16,
+                                "labelLimit": 300
+                            }
+                        },
+                        "x": {
+                            "field": "Hospitalisations",
+                            "type": "quantitative",
+                            "title": "",
+                            "scale": {
+                                "domain": [0, 180000]
+                            },
+                            "axis": {
+                                "labels": false,
+                                "ticks": false,
+                                "domain": false,
+                                "titleFontSize": 20,
+                                "labelFontSize": 16,
+                                "titlePadding": 15,
+                                "format": ",.0f",
+                                "values": [0, 20000, 40000, 60000, 80000, 100000, 120000, 140000, 160000, 180000],
+                                "labelOverlap": false,
+                                "labelFlush": false
+                            }
+                        },
+                        "color": {
+                            "value": "#3f9f86"
+                        },
+                        "tooltip": [
+                            {"field": "Cardiovascular Disease Subtype", "title": "Subtype"},
+                            {"field": "Hospitalisations", "title": "Hospitalisations", "format": ",.0f"}
+                        ]
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "baseline": "middle",
+                        "dx": 5,
+                        "fontSize": 15,
+                        "fill": "black"
+                    },
+                    "encoding": {
+                        "y": {
+                            "field": "Cardiovascular Disease Subtype",
+                            "type": "nominal",
+                            "sort": "-x"
+                        },
+                        "x": {
+                            "field": "Hospitalisations",
+                            "type": "quantitative"
+                        },
+                        "text": {
+                            "field": "Hospitalisations",
+                            "type": "quantitative",
+                            "format": ",.0f"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": {
+                "text": "Deaths",
+                "fontSize": 23,
+                "font": "Georgia, serif",
+                "color": "#4a4d4d",
+                "offset": 10
+            },
+            "width": 700,
+            "height": 600,
+            "layer": [
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "y": {
+                            "field": "Cardiovascular Disease Subtype",
+                            "type": "nominal",
+                            "title": null,
+                            "sort": {
+                                "field": "Hospitalisations",
+                                "order": "descending"
+                            },
+                            "axis": {
+                                "labels": false,
+                                "ticks": false
+                            }
+                        },
+                        "x": {
+                            "field": "Deaths",
+                            "type": "quantitative",
+                            "title": "",
+                            "scale": {
+                                "domain": [0, 18000]
+                            },
+                            "axis": {
+                                "labels": false,
+                                "ticks": false,
+                                "domain": false,
+                                "titleFontSize": 20,
+                                "labelFontSize": 16,
+                                "titlePadding": 15,
+                                "format": ",.0f",
+                                "values": [0, 3000, 6000, 9000, 12000, 15000, 18000],
+                                "labelFlush": false
+                            }
+                        },
+                        "color": {
+                            "value": "#d95f02"
+                        },
+                        "tooltip": [
+                            {"field": "Cardiovascular Disease Subtype", "title": "Subtype"},
+                            {"field": "Deaths", "title": "Deaths", "format": ",.0f"}
+                        ]
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "baseline": "middle",
+                        "dx": 5,
+                        "fontSize": 15,
+                        "fill": "black"
+                    },
+                    "encoding": {
+                        "y": {
+                            "field": "Cardiovascular Disease Subtype",
+                            "type": "nominal",
+                            "sort": {
+                                "field": "Hospitalisations",
+                                "order": "descending"
+                            }
+                        },
+                        "x": {
+                            "field": "Deaths",
+                            "type": "quantitative"
+                        },
+                        "text": {
+                            "field": "Deaths",
+                            "type": "quantitative",
+                            "format": ",.0f"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "resolve": {
+        "scale": {
+            "y": "shared"
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "grid": false,
+            "gridColor": "#f0f0f0"
+        }
+    }
+}

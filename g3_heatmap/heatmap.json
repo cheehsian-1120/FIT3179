@@ -11,7 +11,7 @@
         "offset": 30
     },
     "width": "container",
-    "height": "container",
+    "height": 450,
     "data": {
         "url": "graph_3.csv"
     },

@@ -29,15 +29,15 @@
         "title": null,
         "header": {
             "labelFont": "Georgia, serif",
-            "labelFontSize": 20,
+            "labelFontSize": 23,
             "labelFontWeight": "bold",
-            "labelColor": "#2F4F4F"
+            "labelColor": "#4a4d4d"
         }
     },
     "columns": 2,
     "spec": {
         "width": 600,
-        "height": 310,
+        "height": 400,
         "encoding": {
             "x": {
                 "field": "year",
@@ -45,8 +45,9 @@
                 "axis": {
                     "title": "Year",
                     "format": "d",
-                    "labelFontSize": 12,
-                    "titleFontSize": 14,
+                    "labelFontSize": 16,
+                    "titleFontSize": 18,
+                    "titlePadding": 15,
                     "grid": false,
                     "tickCount": 6
                 }
@@ -81,8 +82,9 @@
                         "type": "quantitative",
                         "axis": {
                             "title": "Rate (per 100,000)",
-                            "labelFontSize": 12,
-                            "titleFontSize": 13,
+                            "labelFontSize": 16,
+                            "titleFontSize": 18,
+                            "titlePadding": 15,
                             "grid": true,
                             "tickCount": 6
                         }
