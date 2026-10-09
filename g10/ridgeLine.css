@@ -1,0 +1,82 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    margin: 0;
+}
+
+.dashboard-container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 950px;
+    width: 100%;
+}
+
+.dashboard-header {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin: 0 0 10px 0;
+    color: #112233;
+}
+
+.dashboard-header h2 {
+    font-size: 20px;
+    color: #6c757d;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+.dashboard-description {
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.legend-key {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff0f1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #e63946;
+    font-weight: 600;
+    border: 1px dashed #e63946;
+    margin-top: 15px;
+}
+
+.legend-key span {
+    display: inline-block;
+    width: 20px;
+    height: 0;
+    border-top: 2px dashed #e63946;
+    margin-right: 8px;
+}
+
+#vis {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Custom Tooltip Formatting */
+#vg-tooltip-element {
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 14px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    padding: 10px !important;
+}

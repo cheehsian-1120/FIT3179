@@ -1,23 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "The Rising Tide: Four Decades of Cardiovascular Mortality (1980-2024)",
-        "subtitle": "Age-standardised death rates per 100,000 population.",
-        "font": "Georgia, serif",
-        "fontSize": 35,
-        "subtitleFontSize": 20,
-        "subtitleColor": "#555",
-        "anchor": "start",
-        "offset": 20
-    },
-    "width": 1500,
-    "height": 600,
+    "width": "container",
+    "height": 450,
     "autosize": {
         "type": "fit",
         "contains": "padding"
     },
     "data": {
-        "url": "graph_1.csv"
+        "url": "data/graph_1.csv"
     },
     "transform": [
         {
@@ -66,10 +56,11 @@
             "axis": {
                 "format": "%Y",
                 "tickCount": 10,
+                "titlePadding": 20,
                 "grid": false,
                 "labelAngle": 0,
-                "titleFontSize": 20,
-                "labelFontSize": 16
+                "titleFontSize": 16,
+                "labelFontSize": 14
             }
         },
         "y": {
@@ -96,8 +87,8 @@
                 "offset": 0,
                 "fillColor": "rgba(255, 255, 255, 0.9)",
                 "padding": 2,
-                "titleFontSize": 20,
-                "labelFontSize": 18,
+                "titleFontSize": 16,
+                "labelFontSize": 14,
                 "symbolSize": 150,
                 "labelLimit": 300
             }
@@ -107,18 +98,18 @@
                 "field": "Year",
                 "type": "temporal",
                 "format": "%Y",
-                "title": "Year"
+                "title": "Year "
             },
             {
                 "field": "Condition",
                 "type": "nominal",
-                "title": "Disease Category"
+                "title": "Disease Category "
             },
             {
                 "field": "Mortality_Rate",
                 "type": "quantitative",
                 "format": ".1f",
-                "title": "Age-Standardise Rate"
+                "title": "Age-Standardise Rate "
             }
         ]
     },

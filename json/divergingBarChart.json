@@ -1,23 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "The Age and Gender Gap in Cardiovascular Health",
-        "subtitle": "Estimated population suffering from heart, stroke, and vascular diseases (2022)",
-        "font": "Georgia, serif",
-        "fontSize": 35,
-        "subtitleFontSize": 20,
-        "subtitleColor": "#555",
-        "anchor": "start",
-        "offset": 20
-    },
-    "width": 1500,
-    "height": "container",
+    "width": "container",
+    "height": 450,
     "autosize": {
         "type": "fit",
         "contains": "padding"
     },
     "data": {
-        "url": "graph_2.csv"
+        "url": "data/graph_2.csv"
     },
     "transform": [
         {
@@ -36,8 +26,8 @@
             "sort": ["0-14", "15-24", "25-34", "35-44", "45-54", "55-64", "65+"],
             "axis": {
                 "title": "Age Group",
-                "titleFontSize": 20,
-                "labelFontSize": 16,
+                "titleFontSize": 16,
+                "labelFontSize": 14,
                 "titlePadding": 25,
                 "domain": false,
                 "ticks": false,
@@ -50,10 +40,10 @@
             "title": "Population",
             "axis": {
                 "labelExpr": "abs(datum.value)",
-                "titleFontSize": 20,
-                "labelFontSize": 16,
+                "titleFontSize": 16,
+                "labelFontSize": 14,
                 "titlePadding": 25,
-                "grid": true,
+                "grid": false,
                 "tickCount": 6
             }
         },
@@ -70,8 +60,8 @@
                 "offset": 0,
                 "fillColor": "rgba(255, 255, 255, 0.9)",
                 "padding": 5,
-                "titleFontSize": 20,
-                "labelFontSize": 18,
+                "titleFontSize": 16,
+                "labelFontSize": 14,
                 "symbolSize": 150
             }
         },

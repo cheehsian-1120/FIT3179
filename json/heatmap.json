@@ -1,19 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "The Comorbidity Web: Heart Disease & Chronic Illness",
-        "subtitle": "Probability (%) of suffering from a secondary condition given a primary diagnosis (Focused on Heart, Stroke & Vascular Disease)",
-        "font": "Georgia, serif",
-        "fontSize": 35,
-        "subtitleFontSize": 20,
-        "subtitleColor": "#b30000",
-        "anchor": "start",
-        "offset": 30
-    },
-    "width": "container",
-    "height": 450,
+    "width": 335,
+    "height": 335,
     "data": {
-        "url": "graph_3.csv"
+        "url": "data/graph_3.csv"
     },
     "transform": [
         {
@@ -70,7 +60,7 @@
             ],
             "axis": {
                 "labelAngle": -45,
-                "labelFontSize": 16,
+                "labelFontSize": 14,
                 "labelFontWeight": {
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
@@ -99,7 +89,7 @@
                 "Osteoporosis"
             ],
             "axis": {
-                "labelFontSize": 16,
+                "labelFontSize": 14,
                 "labelFontWeight": {
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },

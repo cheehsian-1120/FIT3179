@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Weight of the Nation</title>
+    
+    <!-- Vega-Lite Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    <!-- Link to Stylesheet -->
+    <link rel="stylesheet" href="ridgeLine.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="dashboard-header">
+        <h1>The Weight of the Nation</h1>
+        <h2>BMI Distributions by Age</h2>
+    </div>
+
+    <!-- The Vega-Lite chart will render here -->
+    <div id="vis"></div>
+
+</div>
+
+<script>
+    // Load the Ridgeline JSON spec
+    vegaEmbed('#vis', 'ridgeLine.json', { actions: false }).catch(console.error);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proportional Symbol Map - CVD Burden</title>
+    
+    <!-- Vega & Vega-Lite Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="symbolMap.css">
+</head>
+<body>
+
+    <div class="visualisation-container">
+        <!-- The chart and dropdown parameter will generate inside this div -->
+        <div id="mapContainer"></div>
+    </div>
+
+    <script>
+        const spec = "symbolMap.json";
+        
+        // Render the map and hide the default three-dot actions menu
+        vegaEmbed('#mapContainer', spec, { "actions": false }).catch(console.error);
+    </script>
+
+</body>
+</html>

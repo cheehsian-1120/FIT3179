@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wealth Gap in Heart Health</title>
+    <link rel="stylesheet" href="slope.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+    <div class="chart-container">
+        <!-- 1. Title Block -->
+        <div class="chart-header">
+            <h2 class="chart-title">The Wealth Gap in Heart Health</h2>
+            <p class="chart-subtitle">
+                SEIFA (Socio-Economic Indexes for Areas) ranks geographic areas by relative disadvantage.<br>
+                The First Quintile represents the most disadvantaged areas; the Fifth Quintile represents the least.
+            </p>
+        </div>
+
+        <!-- 2. Centered Legend -->
+        <div class="custom-legend">
+            <div class="legend-item">
+                <span class="legend-dot" style="background-color: #d95f02;"></span>
+                <span>Heart, Stroke & Vascular Disease</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot" style="background-color: #7570b3;"></span>
+                <span>Hypertension</span>
+            </div>
+        </div>
+
+        <!-- 3. Slope Chart Canvas -->
+        <div id="slope-chart"></div>
+    </div>
+
+    <script>
+        const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A slope chart drawing lines from the First Quintile to the Fifth Quintile of the SEIFA index.",
+            "width": 600,
+            "height": 380,
+            "data": {
+                "values": [
+                    { "Quintile": "First Quintile\n(Most Disadvantaged)", "Proportion": 8.2, "Condition": "Heart, Stroke & Vascular Disease" },
+                    { "Quintile": "Fifth Quintile\n(Least Disadvantaged)", "Proportion": 3.6, "Condition": "Heart, Stroke & Vascular Disease" },
+                    { "Quintile": "First Quintile\n(Most Disadvantaged)", "Proportion": 14.2, "Condition": "Hypertension" },
+                    { "Quintile": "Fifth Quintile\n(Least Disadvantaged)", "Proportion": 10.1, "Condition": "Hypertension" }
+                ]
+            },
+            "encoding": {
+                "x": {
+                    "field": "Quintile",
+                    "type": "ordinal",
+                    "sort": null,
+                    "title": null,
+                    "axis": {
+                        "labelAngle": 0,
+                        "labelFontSize": 12,
+                        "labelPadding": 15,
+                        "domain": false,
+                        "ticks": false,
+                        "labelLimit": 1000
+                    }
+                },
+                "y": {
+                    "field": "Proportion",
+                    "type": "quantitative",
+                    "scale": { "zero": false, "domain": [2, 16] },
+                    "axis": null
+                },
+                "color": {
+                    "field": "Condition",
+                    "type": "nominal",
+                    "scale": { "range": ["#d95f02", "#7570b3"] },
+                    "legend": null
+                }
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "line",
+                        "strokeWidth": 4
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "circle",
+                        "size": 200,
+                        "opacity": 1
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "center",
+                        "dy": -20,
+                        "fontSize": 15,
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "text": {
+                            "field": "Proportion",
+                            "type": "quantitative",
+                            "format": ".1f"
+                        }
+                    }
+                }
+            ],
+            "config": {
+                "view": { "stroke": "transparent" }
+            }
+        };
+
+        vegaEmbed('#slope-chart', spec, { actions: false }).catch(console.error);
+    </script>
+
+</body>
+</html>

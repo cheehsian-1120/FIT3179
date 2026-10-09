@@ -1,0 +1,130 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Lollipop Chart of Cardiovascular Medications",
+    "data": {
+        "url": "medication.csv"
+    },
+    "width": 700,
+    "height": 450,
+    "transform": [
+        {
+            "calculate": "datum['Age Group'] == '0-17' ? 1 : datum['Age Group'] == '18-24' ? 2 : datum['Age Group'] == '25-34' ? 3 : datum['Age Group'] == '35-44' ? 4 : datum['Age Group'] == '45-54' ? 5 : (datum['Age Group'] == '55-64' || datum['Age Group'] == '55-64') ? 6 : 7",
+            "as": "Order"
+        }
+    ],
+    "encoding": {
+        "y": {
+            "field": "Age Group",
+            "type": "nominal",
+            "sort": {
+                "field": "Order"
+            },
+            "axis": {
+                "title": "Age Group",
+                "titleFontSize": 15,
+                "titleColor": "#495057",
+                "titlePadding": 15,
+                "labelFontSize": 13,
+                "labelColor": "#2c3e50",
+                "labelPadding": 10,
+                "grid": false,
+                "domain": false,
+                "ticks": false
+            }
+        },
+        "x": {
+            "field": "Medication Dispensed",
+            "type": "quantitative",
+            "axis": {
+                "title": "Total Dispensed Volume (PBS)",
+                "titleFontSize": 15,
+                "titleColor": "#495057",
+                "titlePadding": 15,
+                "labelFontSize": 12,
+                "labelColor": "#6c757d",
+                "grid": true,
+                "gridColor": "#f1f3f5",
+                "gridDash": [4, 4],
+                "domain": true,
+                "domainColor": "#dee2e6",
+                "format": ".2s"
+            }
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "rule",
+                "strokeWidth": 4,
+                "opacity": 0.8
+            },
+            "encoding": {
+                "color": {
+                    "field": "Age Group",
+                    "type": "nominal",
+                    "scale": {
+                        "scheme": "plasma"
+                    },
+                    "sort": {
+                        "field": "Order"
+                    },
+                    "legend": null
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "circle",
+                "size": 400,
+                "opacity": 1
+            },
+            "encoding": {
+                "color": {
+                    "field": "Age Group",
+                    "type": "nominal",
+                    "scale": {
+                        "scheme": "plasma"
+                    },
+                    "sort": {
+                        "field": "Order"
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {
+                        "field": "Age Group",
+                        "title": "Age Bracket"
+                    },
+                    {
+                        "field": "Medication Dispensed",
+                        "title": "Total Dispensed Volume",
+                        "format": ","
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 16,
+                "fontSize": 13,
+                "fontWeight": "normal",
+                "color": "#495057"
+            },
+            "encoding": {
+                "text": {
+                    "field": "Medication Dispensed",
+                    "type": "quantitative",
+                    "format": ".2s"
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

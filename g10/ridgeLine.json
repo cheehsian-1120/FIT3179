@@ -1,0 +1,178 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Ridgeline density plot of BMI distributions by Age Group",
+    "data": {
+        "url": "bmi.csv"
+    },
+    "transform": [
+        {
+            "calculate": "datum.Age_Group",
+            "as": "Age Group"
+        }
+    ],
+    "facet": {
+        "row": {
+            "field": "Age Group",
+            "type": "nominal",
+            "sort": {
+                "field": "Age_Sort",
+                "order": "ascending"
+            },
+            "header": {
+                "title": "Age Groups",
+                "titleFontSize": 18,
+                "titleColor": "#000000",
+                "titlePadding": 10,
+                "labelAngle": 0,
+                "labelAlign": "right",
+                "labelFontSize": 16,
+                "labelColor": "#555",
+                "labelPadding": 15
+            }
+        }
+    },
+    "spec": {
+        "width": 750,
+        "height": 90,
+        "layer": [
+            {
+                "mark": {
+                    "type": "area",
+                    "interpolate": "natural",
+                    "line": {
+                        "color": "#333",
+                        "strokeWidth": 1.2
+                    },
+                    "fillOpacity": 0.65
+                },
+                "encoding": {
+                    "x": {
+                        "field": "BMI_Midpoint",
+                        "type": "quantitative",
+                        "title": "Measured Body Mass Index (BMI)",
+                        "scale": {
+                            "domain": [
+                                15,
+                                45
+                            ]
+                        },
+                        "axis": {
+                            "grid": false,
+                            "gridColor": "#eaeaea",
+                            "tickCount": 6,
+                            "labelFontSize": 16,
+                            "titleFontSize": 18,
+                            "titleColor": "#000000",
+                            "titlePadding": 15,
+                            "domain": false
+                        }
+                    },
+                    "y": {
+                        "field": "Proportion",
+                        "type": "quantitative",
+                        "title": null,
+                        "axis": null,
+                        "scale": {
+                            "domain": [
+                                0,
+                                45
+                            ]
+                        }
+                    },
+                    "color": {
+                        "field": "Age_Sort",
+                        "type": "quantitative",
+                        "scale": {
+                            "scheme": "teals",
+                            "reverse": false
+                        },
+                        "legend": null
+                    },
+                    "tooltip": [
+                        {
+                            "field": "Age Group",
+                            "title": "Age Group:"
+                        },
+                        {
+                            "field": "BMI_Category",
+                            "title": "BMI Category:"
+                        },
+                        {
+                            "field": "Proportion",
+                            "title": "Proportion (%):",
+                            "format": ".1f"
+                        }
+                    ]
+                }
+            },
+            {
+                "data": {
+                    "values": [
+                        {
+                            "Threshold": 30
+                        }
+                    ]
+                },
+                "mark": {
+                    "type": "rule",
+                    "color": "#e63946",
+                    "strokeDash": [
+                        6,
+                        4
+                    ],
+                    "strokeWidth": 4,
+                    "opacity": 0.8
+                },
+                "encoding": {
+                    "x": {
+                        "field": "Threshold",
+                        "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "transform": [
+                    {
+                        "filter": "datum['Age Group'] == '18-24'"
+                    },
+                    {
+                        "filter": "datum.BMI_Midpoint == 15"
+                    }
+                ],
+                "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "baseline": "bottom",
+                    "dx": 8,
+                    "dy": -70,
+                    "color": "#e63946",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "text": "Obesity Threshold"
+                },
+                "encoding": {
+                    "x": {
+                        "datum": 30,
+                        "type": "quantitative"
+                    },
+                    "y": {
+                        "datum": 0,
+                        "type": "quantitative"
+                    }
+                }
+            }
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "facet": {
+            "spacing": -50
+        },
+        "axis": {
+            "domain": false,
+            "ticks": false
+        }
+    }
+}

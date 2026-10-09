@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Australian Health Risk Cartogram</title>
+
+<link rel="stylesheet" href="hexCarto.css">
+
+<script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <div class="dashboard-header">
+        <h2>Australian Lifestyle Risk Factors</h2>
+        <p>1 Hexagon = 250,000 Adults</p>
+    </div>
+
+    <!-- Custom Interactive Buttons -->
+    <div class="controls">
+
+        <button
+            class="risk-btn active"
+            data-val="Smoking_Pct">
+            Smoking
+        </button>
+
+        <button
+            class="risk-btn"
+            data-val="Obesity_Pct">
+            Obesity
+        </button>
+
+        <button
+            class="risk-btn"
+            data-val="Hypertension_Pct">
+            Hypertension
+        </button>
+
+    </div>
+
+    <!-- Map Container -->
+    <div id="vis"></div>
+
+</div>
+
+
+<script>
+
+    // Load the Vega-Lite specification
+    vegaEmbed(
+        '#vis',
+        'hexCarto.json',
+        { actions: false }
+    )
+    .then(result => {
+
+        const view = result.view;
+
+        // Find all three custom buttons
+        document
+            .querySelectorAll('.risk-btn')
+            .forEach(btn => {
+
+                btn.addEventListener('click', function () {
+
+                    // Remove active class from all buttons
+                    document
+                        .querySelectorAll('.risk-btn')
+                        .forEach(b => {
+                            b.classList.remove('active');
+                        });
+
+                    // Make clicked button active
+                    this.classList.add('active');
+
+                    // Get selected health-risk variable
+                    const selectedRisk =
+                        this.getAttribute('data-val');
+
+                    // Send selected variable to Vega-Lite
+                    view
+                        .signal('Health_Risk', selectedRisk)
+                        .runAsync();
+
+                });
+
+            });
+
+    })
+    .catch(console.error);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Heart Disease</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    <link rel="stylesheet" href="map.css">
+</head>
+<body>
+
+<div class="visualisation-container">
+    
+    <!-- Native HTML Title & Subtitle -->
+    <div class="header-section">
+        <h1>The National Footprint: Heart Disease</h1>
+        <h2>Age-Standardised Rate (ASR) per 100,000 population</h2>
+    </div>
+    
+    <!-- Interactive Toggle Button -->
+    <div class="toggle-wrapper">
+        <div class="toggle-container" id="mapToggle">
+            <div class="toggle-btn active" data-map="state">State Level</div>
+            <div class="toggle-btn" data-map="lga">LGA Level</div>
+            <div class="toggle-slider"></div>
+        </div>
+    </div>
+
+    <!-- Map Container -->
+    <div class="chart-section">
+        <div id="mapContainer"></div>
+    </div>
+
+</div>
+
+<script>
+    const stateMap = "stateMap.json";
+    const lgaMap = "choroplethMap.json";
+
+    function renderMap(specUrl) {
+        vegaEmbed('#mapContainer', specUrl, {actions: false}).catch(console.error);
+    }
+
+    renderMap(stateMap);
+
+    const toggleContainer = document.getElementById('mapToggle');
+    const buttons = toggleContainer.querySelectorAll('.toggle-btn');
+    const slider = toggleContainer.querySelector('.toggle-slider');
+
+    buttons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            slider.style.transform = `translateX(${index * 100}%)`;
+
+            if (btn.dataset.map === "state") {
+                renderMap(stateMap);
+            } else {
+                renderMap(lgaMap);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

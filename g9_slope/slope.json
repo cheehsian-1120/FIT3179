@@ -1,0 +1,125 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "The Wealth Gap in Heart Health",
+        "subtitle": [
+            "SEIFA (Socio-Economic Indexes for Areas) ranks geographic areas by relative disadvantage.",
+            "The First Quintile represents the most disadvantaged areas; the Fifth Quintile represents the least."
+        ],
+        "anchor": "start",
+        "fontSize": 16,
+        "subtitleFontSize": 12,
+        "subtitlePadding": 5,
+        "subtitleColor": "gray"
+    },
+    "description": "A slope chart drawing lines from the First Quintile (most disadvantaged) to the Fifth Quintile (least disadvantaged) of the SEIFA index. It emphasizes the stark inequity in heart disease and hypertension outcomes based on socioeconomic status.",
+    "width": 800,
+    "height": 500,
+    "data": {
+        "values": [
+            {
+                "Quintile": "First Quintile\n(Most Disadvantaged)",
+                "Proportion": 8.2,
+                "Condition": "Heart, Stroke & Vascular Disease"
+            },
+            {
+                "Quintile": "Fifth Quintile\n(Least Disadvantaged)",
+                "Proportion": 3.6,
+                "Condition": "Heart, Stroke & Vascular Disease"
+            },
+            {
+                "Quintile": "First Quintile\n(Most Disadvantaged)",
+                "Proportion": 14.2,
+                "Condition": "Hypertension"
+            },
+            {
+                "Quintile": "Fifth Quintile\n(Least Disadvantaged)",
+                "Proportion": 10.1,
+                "Condition": "Hypertension"
+            }
+        ]
+    },
+    "encoding": {
+        "x": {
+            "field": "Quintile",
+            "type": "ordinal",
+            "sort": null,
+            "title": null,
+            "axis": {
+                "labelAngle": 0,
+                "labelFontSize": 12,
+                "labelPadding": 15,
+                "domain": false,
+                "ticks": false,
+                "labelLimit": 300
+            }
+        },
+        "y": {
+            "field": "Proportion",
+            "type": "quantitative",
+            "scale": {
+                "zero": false,
+                "domain": [
+                    2,
+                    16
+                ]
+            },
+            "axis": null
+        },
+        "color": {
+            "field": "Condition",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    "#d95f02",
+                    "#7570b3"
+                ]
+            },
+            "legend": {
+                "orient": "top",
+                "title": null,
+                "labelFontSize": 13,
+                "labelLimit": 300,
+                "padding": 15,
+                "direction": "horizontal",
+                "offset": -30
+            }
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "line",
+                "strokeWidth": 4
+            }
+        },
+        {
+            "mark": {
+                "type": "circle",
+                "size": 200,
+                "opacity": 1
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "dy": -20,
+                "fontSize": 15,
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "text": {
+                    "field": "Proportion",
+                    "type": "quantitative",
+                    "format": ".1f"
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

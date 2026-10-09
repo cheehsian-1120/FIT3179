@@ -3,27 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CVD State Level Choropleth Map</title>
-    
-    <!-- Vega & Vega-Lite Scripts -->
+    <title>Article Layout</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
-
-    <!-- Connect CSS -->
-    <link rel="stylesheet" href="stateMap.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
 </head>
 <body>
 
-    <div class="visualisation-container">
-        <div class="chart-section">
-            <div id="mapContainer"></div>
+    <header class="top-banner">
+        <div class="container">
+            <h1 class="logo-t1a">AUSTRALIA</h1>
         </div>
+    </header>
+
+    <div class="state-container">
+        <div class="container">
+            <h2 class="logo-t1b">Heart Health</h2>
+        </div>
+        <hr class="red-divider">
     </div>
 
+    <main class="container">
+
+        <p class="category-overline">DATA DASHBOARD</p>
+        <h2 class="main-title">Cardiovascular Trends & Insights</h2>
+
+        <hr class="divider">
+
+        <p class="webpage-intro">
+            This dashboard investigates <bold>Cardiovascular Disease</bold> statistics across <bold>Australia</bold>.<br>
+            It compares <bold>hospitalisations</bold>, <bold>deaths</bold>, and <bold>various risk factors</bold> among different<br>
+            demographic groups and populations. Furthermore, it explores the significant changes<br>
+            in overall heart health trends over recent decades.
+        </p>
+
+        <div class="charts-container">
+
+            <div class="chart-section">
+                <h3 class="chart-title">Cardiovascular Mortality Trends (1980-2024)</h3>
+                <p class="chart-subtitle">Age-standardised death rates per 100,000 population</p>
+                <div class="chart-wrapper">
+                    <div id="streamgraph"></div>
+                </div>
+                <div class="chart-description storytelling-insights two-columns">
+                    <div class="insight-block">
+                        <h4>The Triumph of Vascular Intervention</h4>
+                        <p>The dramatic narrowing of the graph over four decades highlights how modern medicine has mastered clearing blockages and managing blood pressure. This success in keeping the heart's supply lines open has massively reduced the deadly impacts of both coronary diseases and strokes.</p>
+                    </div>
+
+                    <div class="insight-block">
+                        <h4>The Bottleneck of Mechanical Fatigue</h4>
+                        <p>Despite massive overall improvements, mortality rates for structural heart issues remain stubbornly flat. While medicine excels at unclogging arteries, reversing physical wear-and-tear or repairing a weakened heart muscle (heart failure) continues to be a profound clinical challenge.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <h3 class="chart-title">The Heavy Cardiovascular Burden on the Aging Population</h3>
+                <p class="chart-subtitle">Estimated population suffering from heart, stroke, and vascular diseases in 2022</p>
+                <div class="chart-wrapper">
+                    <div id="pyramid-chart"></div>
+                </div>
+                <div class="chart-description storytelling-insights two-columns">
+                    <div class="insight-block">
+                        <h4>Age as the Primary Driver</h4>
+                        <p>The pyramid clearly demonstrates that cardiovascular conditions are overwhelmingly concentrated in the 65+ age demographic. This directly reinforces our previous finding: mechanical fatigue and age-related structural decline remain the most significant bottlenecks in current cardiovascular care.</p>
+                    </div>
+
+                    <div class="insight-block">
+                        <h4>The Universal Burden of Aging</h4>
+                        <p>While the distribution shows minor variations in younger cohorts, the absolute number of affected individuals surges massively for both males and females in later life. This visual weight at the bottom of the pyramid emphasizes that cardiovascular aging is a universal burden, paving the way for complex comorbidities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <h3 class="chart-title">The Comorbidity of Heart Disease and Chronic Illness</h3>
+                <p class="chart-subtitle">Probability rates of overlapping secondary conditions for diagnosed patients in 2022</p>
+                <div class="side-by-side-layout">
+                    <div class="chart-description storytelling-insights single-column-left">
+                        <div class="insight-block">
+                            <h4>The Compounded Mobility Burden</h4>
+                            <p>The darkest intersections on the heatmap reveal a striking reality: patients with cardiovascular disease have the highest probability of concurrently suffering from arthritis and back problems (dorsopathies). This indicates that heart conditions are deeply entangled with severe physical mobility limitations, compounding the daily physical toll on affected individuals.</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper heatmap-wrapper">
+                        <div id="heatmap"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
     <script>
-        const spec = "stateMap.json";
-        vegaEmbed('#mapContainer', spec, { "actions": false }).catch(console.error);
+        var spec1 = "json/streamgraph.json";
+        vegaEmbed('#streamgraph', spec1, { 
+            actions: false
+        }).catch(console.error);
+
+        var spec2 = "json/divergingBarChart.json"; 
+        vegaEmbed('#pyramid-chart', spec2, { 
+            actions: false
+        }).catch(console.error);
+
+        var spec3 = "json/heatmap.json"; 
+        vegaEmbed('#heatmap', spec3, { 
+            actions: false
+        }).catch(console.error);
     </script>
 
 </body>
