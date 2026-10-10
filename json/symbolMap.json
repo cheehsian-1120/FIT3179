@@ -41,7 +41,7 @@
     "layer": [
         {
             "data": {
-                "url": "../json/australia_state.topojson",
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/json/australia_state.topojson",
                 "format": {
                     "type": "topojson",
                     "feature": "STE_2021_AUST_GDA2020"
@@ -56,7 +56,7 @@
         },
         {
             "data": {
-                "url": "../data/hospitalisations_lga_centroids.csv"
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hospitalisations_lga_centroids.csv"
             },
             "transform": [
                 {
@@ -123,7 +123,7 @@
         },
         {
             "data": {
-                "url": "../data/hospitalisations_lga_centroids.csv"
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hospitalisations_lga_centroids.csv"
             },
             "transform": [
                 {
@@ -192,7 +192,7 @@
         },
         {
             "data": {
-                "url": "../data/hospitalisations_lga_centroids.csv"
+                "url": ".https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hospitalisations_lga_centroids.csv"
             },
             "transform": [
                 {
@@ -261,7 +261,7 @@
         },
         {
             "data": {
-                "url": "../data/hospitalisations_lga_centroids.csv"
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hospitalisations_lga_centroids.csv"
             },
             "transform": [
                 {

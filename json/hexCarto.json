@@ -11,7 +11,7 @@
         }
     ],
     "data": {
-        "url": "../data/hexCarto.csv",
+        "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hexCarto.csv",
         "format": {
             "type": "csv",
             "parse": {
@@ -126,7 +126,7 @@
         },
         {
             "data": {
-                "url": "../data/hexCarto2.csv",
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hexCarto2.csv",
                 "format": {
                     "type": "csv",
                     "parse": {

@@ -4,7 +4,7 @@
     "width": 335,
     "height": 335,
     "data": {
-        "url": "../data/graph_3.csv"
+        "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/graph_3.csv"
     },
     "transform": [
         {

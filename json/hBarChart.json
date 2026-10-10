@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-        "url": "../data/hBarChart.csv"
+        "url": ".https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hBarChart.csv"
     },
     "background": "transparent",
     "spacing": 60,

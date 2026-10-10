@@ -37,7 +37,7 @@
     "layer": [
         {
             "data": {
-                "url": "../json/australia_lga.topojson",
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/json/australia_lga.topojson",
                 "format": {
                     "type": "topojson",
                     "feature": "LGA_2021_AUST_GDA2020"
@@ -51,7 +51,7 @@
                     "lookup": "properties.LGA_CODE21",
                     "from": {
                         "data": {
-                            "url": "../data/graph_4.csv"
+                            "url": ".https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/graph_4.csv"
                         },
                         "key": "LGA_Code",
                         "fields": [
@@ -102,7 +102,7 @@
         },
         {
             "data": {
-                "url": "../json/australia_state.topojson",
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/json/australia_state.topojson",
                 "format": {
                     "type": "topojson",
                     "feature": "STE_2021_AUST_GDA2020"

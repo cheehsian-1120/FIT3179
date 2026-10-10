@@ -11,7 +11,7 @@
     "layer": [
         {
             "data": {
-                "url": "../json/australia_state.topojson",
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/json/australia_state.topojson",
                 "format": {
                     "type": "topojson",
                     "feature": "STE_2021_AUST_GDA2020"
@@ -22,7 +22,7 @@
                     "lookup": "properties.STE_NAME21",
                     "from": {
                         "data": {
-                            "url": "../data/graph_4b.csv"
+                            "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/graph_4b.csv"
                         },
                         "key": "State & Territory",
                         "fields": ["ASR"]
