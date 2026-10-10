@@ -192,7 +192,7 @@
         },
         {
             "data": {
-                "url": ".https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hospitalisations_lga_centroids.csv"
+                "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/hospitalisations_lga_centroids.csv"
             },
             "transform": [
                 {
