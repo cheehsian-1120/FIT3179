@@ -60,6 +60,26 @@
             </div>
 
             <div class="chart-section">
+                <h3 class="chart-title">Hospitalisations and Deaths</h3>
+                <p class="chart-subtitle">2024 volume comparison across major cardiovascular conditions</p>
+                <div class="chart-wrapper">
+                    <div id="hbar-chart"></div>
+                </div>
+                
+                <div class="chart-description storytelling-insights two-columns">
+                    <div class="insight-block">
+                        <h4>The Dominance of Coronary Issues</h4>
+                        <p>In 2024, Coronary Heart Disease stands far above the rest, driving the vast majority of both acute hospital admissions and fatal outcomes. This underlines the massive scale of arterial blockages as the primary mechanism of cardiovascular crisis.</p>
+                    </div>
+
+                    <div class="insight-block">
+                        <h4>Survival Disparities Among Subtypes</h4>
+                        <p>While Atrial Fibrillation causes a high number of hospitalisations, its associated mortality is comparatively low. In stark contrast, Stroke shows a much higher ratio of deaths to hospital admissions, highlighting its devastating and acute lethal nature.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section">
                 <h3 class="chart-title">The Heavy Cardiovascular Burden on the Aging Population</h3>
                 <p class="chart-subtitle">Estimated population suffering from heart, stroke, and vascular diseases in 2022</p>
                 <div class="chart-wrapper">
@@ -91,12 +111,110 @@
                     <div class="chart-wrapper heatmap-wrapper">
                         <div id="heatmap"></div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Chart 5 -->
+            <div class="chart-section">
+                <h3 class="chart-title">Australia's Heart Disease Landscape</h3>
+                <p class="chart-subtitle">Age-Standardised Rate (ASR) per 100,000 population in 2021</p>
+                
+                <div class="side-by-side-layout">
+                    
+                    <div class="chart-description storytelling-insights single-column-left">
+                        
+                        <div class="toggle-wrapper toggle-left">
+                            <div class="toggle-container" id="mapToggle">
+                                <div class="toggle-btn active" data-map="state">State</div>
+                                <div class="toggle-btn" data-map="lga">Shire</div>
+                                <div class="toggle-slider"></div>
+                            </div>
+                        </div>
+
+                        <div id="dropdown-container"></div>
+
+                        <div id="insight-state" class="insight-block">
+                            <h4>State-Level Disparities</h4>
+                            <p>At the macro level, the Northern Territory shows a markedly higher Age-Standardised Rate of heart disease, highlighting unique geographic and demographic health challenges in these broader regions compared to the eastern states.</p>
+                        </div>
+
+                        <div id="insight-lga" class="insight-block" style="display: none;">
+                            <h4>Local Community Impact</h4>
+                            <p>Zooming into the Local Government Area level exposes stark localized contrasts. Even within states with better overall averages, specific local communities face severe cardiovascular burdens, emphasizing the need for targeted, community-level healthcare interventions.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper heatmap-wrapper">
+                        <div id="mapContainer"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="chart-section" style="padding-bottom: 15px;">
+                <h3 class="chart-title">Healthcare Demand Hotspots</h3>
+                <p class="chart-subtitle">Visualising the sheer volume of cardiovascular admissions by local government areas in 2022/23</p>
+
+                <div class="side-by-side-layout">
+                    
+                    <div class="chart-description storytelling-insights single-column-left">
+                        
+                        <div id="dropdown-container-symbol"></div>
+
+                        <div class="insight-block">
+                            <h4>The Urban Pressure</h4>
+                            <p>While regional areas may show higher disease rates per capita, the absolute volume of patients heavily strains coastal metropolitan hubs. This stark contrast highlights the dual challenge in cardiovascular care: equitable access in remote areas versus immense capacity management in urban centers.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper symbol-wrapper">
+                        <div id="symbolMapContainer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <h3 class="chart-title">Australian Lifestyle Risk Factors</h3>
+                <p class="chart-subtitle">A 2022 demographic breakdown of lifestyle risks. (1 Hexagon = 250,000 Adults)</p>
+                
+                <div class="side-by-side-layout" style="margin-bottom: -100px;">
+                    <div class="chart-description storytelling-insights single-column-left">
+                        
+                        <div id="dropdown-container" style="margin-bottom: 25px;">
+                            <div class="vega-bind">
+                                <span class="vega-bind-name">Select Risk Factor:</span>
+                                <select id="riskDropdown">
+                                    <option value="Smoking_Pct">Smoking</option>
+                                    <option value="Obesity_Pct">Obesity</option>
+                                    <option value="Hypertension_Pct">Hypertension</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="insight-smoking" class="insight-block">
+                            <h4>Smoking Prevalence</h4>
+                            <p>Queensland (QLD) and the Northern Territory (NT) exhibit the highest smoking prevalences nationwide. This stark geographic concentration highlights an urgent need for targeted tobacco control policies and public health resources tailored to these specific demographic profiles.</p>
+                        </div>
+                        
+                        <div id="insight-obesity" class="insight-block" style="display: none;">
+                            <h4>The Obesity Challenge</h4>
+                            <p>Obesity is a severe, widespread challenge, with prevalence rates peaking dangerously high in Tasmania (TAS), Western Australia (WA), and the Northern Territory (NT). This systemic metabolic burden acts as a primary catalyst for future cardiovascular complications, demanding aggressive structural health interventions.</p>
+                        </div>
+                        
+                        <div id="insight-hypertension" class="insight-block" style="display: none;">
+                            <h4>Hypertension Burden</h4>
+                            <p>High blood pressure clusters significantly in southern regions, particularly Tasmania (TAS) and South Australia (SA). As a potent "silent killer," this pattern signals a critical necessity for these states to prioritize early diagnostic screening and robust primary care management.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper heatmap-wrapper">
+                        <div id="hexCartoContainer" style="transform: scale(0.9); transform-origin: top;"></div>
+                    </div>
 
                 </div>
             </div>
 
         </div>
-
     </main>
 
     <script>
@@ -105,14 +223,95 @@
             actions: false
         }).catch(console.error);
 
-        var spec2 = "json/divergingBarChart.json"; 
-        vegaEmbed('#pyramid-chart', spec2, { 
+        var spec2 = "json/hBarChart.json"; 
+        vegaEmbed('#hbar-chart', spec2, { actions: false }).catch(console.error);
+
+        var spec3 = "json/divergingBarChart.json"; 
+        vegaEmbed('#pyramid-chart', spec3, { 
             actions: false
         }).catch(console.error);
 
-        var spec3 = "json/heatmap.json"; 
-        vegaEmbed('#heatmap', spec3, { 
+        var spec4 = "json/heatmap.json"; 
+        vegaEmbed('#heatmap', spec4, { 
             actions: false
+        }).catch(console.error);
+
+        // Chart 5
+        const stateMap = "json/stateMap.json";
+        const lgaMap = "json/choroplethMap.json";
+
+        function renderMap(specUrl) {
+            const dropdownContainer = document.getElementById('dropdown-container');
+            if (dropdownContainer) {
+                dropdownContainer.innerHTML = '';
+            }
+
+            vegaEmbed('#mapContainer', specUrl, {actions: false}).then(function(result) {
+                const bindings = document.querySelector('#mapContainer .vega-bindings');
+                
+                if (bindings && dropdownContainer) {
+                    dropdownContainer.appendChild(bindings);
+                }
+            }).catch(console.error);
+        }
+
+        renderMap(stateMap);
+
+        const toggleContainer = document.getElementById('mapToggle');
+        const buttons = toggleContainer.querySelectorAll('.toggle-btn');
+        const slider = toggleContainer.querySelector('.toggle-slider');
+
+        buttons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                slider.style.transform = `translateX(${index * 100}%)`;
+
+                if (btn.dataset.map === "state") {
+                    renderMap(stateMap);
+                    document.getElementById("insight-state").style.display = "flex";
+                    document.getElementById("insight-lga").style.display = "none";
+                } else {
+                    renderMap(lgaMap);
+                    document.getElementById("insight-state").style.display = "none";
+                    document.getElementById("insight-lga").style.display = "flex";
+                }
+            });
+        });
+
+        const symbolMapUrl = "json/symbolMap.json"; 
+        vegaEmbed('#symbolMapContainer', symbolMapUrl, {actions: false}).then(function(result) {
+            const dropdownContainerSymbol = document.getElementById('dropdown-container-symbol');
+            const bindings = document.querySelector('#symbolMapContainer .vega-bindings');
+            if (bindings && dropdownContainerSymbol) {
+                dropdownContainerSymbol.appendChild(bindings);
+            }
+        }).catch(console.error);
+
+        const hexCartoUrl = "json/hexCarto.json"; 
+        vegaEmbed('#hexCartoContainer', hexCartoUrl, {actions: false}).then(function(result) {
+            const view = result.view;
+            
+            const riskDropdown = document.getElementById('riskDropdown');
+            
+            riskDropdown.addEventListener('change', (event) => {
+                const selectedRisk = event.target.value;
+                
+                view.signal('Health_Risk', selectedRisk).runAsync();
+
+                document.getElementById("insight-smoking").style.display = "none";
+                document.getElementById("insight-obesity").style.display = "none";
+                document.getElementById("insight-hypertension").style.display = "none";
+                
+                if (selectedRisk === "Smoking_Pct") {
+                    document.getElementById("insight-smoking").style.display = "flex";
+                } else if (selectedRisk === "Obesity_Pct") {
+                    document.getElementById("insight-obesity").style.display = "flex";
+                } else {
+                    document.getElementById("insight-hypertension").style.display = "flex";
+                }
+            });
         }).catch(console.error);
     </script>
 

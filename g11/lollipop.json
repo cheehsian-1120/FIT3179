@@ -21,14 +21,16 @@
             },
             "axis": {
                 "title": "Age Group",
-                "titleFontSize": 15,
-                "titleColor": "#495057",
+                "titleFontSize": 16,
+                "titleColor": "#000000",
                 "titlePadding": 15,
-                "labelFontSize": 13,
-                "labelColor": "#2c3e50",
+                "labelFontSize": 14,
+                "labelColor": "#000000",
                 "labelPadding": 10,
                 "grid": false,
-                "domain": false,
+                "domain": true,
+                "domainColor": "#000000",
+                "domainWidth": 1,
                 "ticks": false
             }
         },
@@ -37,16 +39,14 @@
             "type": "quantitative",
             "axis": {
                 "title": "Total Dispensed Volume (PBS)",
-                "titleFontSize": 15,
-                "titleColor": "#495057",
+                "titleFontSize": 16,
+                "titleColor": "#000000",
                 "titlePadding": 15,
-                "labelFontSize": 12,
-                "labelColor": "#6c757d",
-                "grid": true,
-                "gridColor": "#f1f3f5",
-                "gridDash": [4, 4],
+                "labelFontSize": 14,
+                "labelColor": "#000000",
+                "grid": false,
                 "domain": true,
-                "domainColor": "#dee2e6",
+                "domainColor": "#000000",
                 "format": ".2s"
             }
         }

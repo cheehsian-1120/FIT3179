@@ -1,19 +1,17 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "transparent",
     "width": 800,
     "height": 600,
     "projection": {
         "type": "mercator",
-        "center": [
-            134,
-            -28
-        ],
+        "center": [134, -28],
         "scale": 860
     },
     "layer": [
         {
             "data": {
-                "url": "australia_state.topojson",
+                "url": "../json/australia_state.topojson",
                 "format": {
                     "type": "topojson",
                     "feature": "STE_2021_AUST_GDA2020"
@@ -24,81 +22,43 @@
                     "lookup": "properties.STE_NAME21",
                     "from": {
                         "data": {
-                            "url": "graph_4b.csv"
+                            "url": "../data/graph_4b.csv"
                         },
                         "key": "State & Territory",
-                        "fields": [
-                            "ASR"
-                        ]
-                    }
-                },
-                {
-                    "calculate": "datum.properties.STE_NAME21",
-                    "as": "state"
-                }
-            ],
-            "params": [
-                {
-                    "name": "hover",
-                    "select": {
-                        "type": "point",
-                        "on": "pointerover",
-                        "fields": ["state"]
+                        "fields": ["ASR"]
                     }
                 }
             ],
             "mark": {
-                "type": "geoshape"
+                "type": "geoshape",
+                "stroke": "#000000",
+                "strokeWidth": 0.4
             },
             "encoding": {
                 "color": {
                     "field": "ASR",
                     "type": "quantitative",
-                    "title": "ASR (per 100k)",
                     "scale": {
                         "type": "linear",
-                        "domain": [
-                            3.5,
-                            5.0
-                        ],
+                        "domain": [3.5, 5.0],
                         "scheme": "reds"
                     },
                     "legend": {
                         "title": "Age-Standardize Rate (per 100k)",
                         "orient": "bottom",
                         "direction": "horizontal",
-                        "titleFontSize": 16,
-                        "labelFontSize": 13,
+                        "titleFontSize": 14.5,
+                        "labelFontSize": 12,
                         "titleLimit": 500,
                         "gradientLength": 300,
-                        "offset": 20
+                        "offset": -100,
+                        "padding": 40
                     }
                 },
                 "tooltip": [
-                    {
-                        "field": "properties.STE_NAME21",
-                        "title": "State/Territory",
-                        "type": "nominal"
-                    },
-                    {
-                        "field": "ASR",
-                        "title": "Age-Standardised Rate",
-                        "type": "quantitative",
-                        "format": ".2f"
-                    }
-                ],
-                "opacity": {
-                    "condition": {"param": "hover", "value": 1},
-                    "value": 0.3
-                },
-                "stroke": {
-                    "condition": {"param": "hover", "empty": false, "value": "#000000"},
-                    "value": "#000000"
-                },
-                "strokeWidth": {
-                    "condition": {"param": "hover", "empty": false, "value": 2.5},
-                    "value": 0.4
-                }
+                    {"field": "properties.STE_NAME21", "title": "State/Territory", "type": "nominal"},
+                    {"field": "ASR", "title": "Age-Standardised Rate", "type": "quantitative", "format": ".2f"}
+                ]
             }
         },
         {
@@ -112,20 +72,11 @@
                     {"state": "Victoria", "lon": 144.5, "lat": -36.8}
                 ]
             },
-            "mark": {
-                "type": "text",
-                "fontSize": 13,
-                "fontWeight": "bold",
-                "fill": "#333333"
-            },
+            "mark": {"type": "text", "fontSize": 13, "fontWeight": "bold", "fill": "#333333"},
             "encoding": {
                 "longitude": {"field": "lon", "type": "quantitative"},
                 "latitude": {"field": "lat", "type": "quantitative"},
-                "text": {"field": "state", "type": "nominal"},
-                "opacity": {
-                    "condition": {"param": "hover", "value": 1},
-                    "value": 0.3
-                }
+                "text": {"field": "state", "type": "nominal"}
             }
         },
         {
@@ -134,24 +85,11 @@
                     {"state": "Tasmania", "lon": 146.6, "lat": -41.5}
                 ]
             },
-            "mark": {
-                "type": "text",
-                "align": "left",
-                "baseline": "middle",
-                "dx": 35,
-                "dy": 15,
-                "fontSize": 13,
-                "fontWeight": "bold",
-                "fill": "#333333"
-            },
+            "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 35, "dy": 15, "fontSize": 13, "fontWeight": "bold", "fill": "#333333"},
             "encoding": {
                 "longitude": {"field": "lon", "type": "quantitative"},
                 "latitude": {"field": "lat", "type": "quantitative"},
-                "text": {"field": "state", "type": "nominal"},
-                "opacity": {
-                    "condition": {"param": "hover", "value": 1},
-                    "value": 0.3
-                }
+                "text": {"field": "state", "type": "nominal"}
             }
         },
         {
@@ -160,24 +98,11 @@
                     {"state": "Australian Capital Territory", "label": "Canberra", "lon": 150.3, "lat": -36}
                 ]
             },
-            "mark": {
-                "type": "text",
-                "align": "left",
-                "baseline": "middle",
-                "dx": 30,
-                "dy": -10,
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "fill": "#333333"
-            },
+            "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 30, "dy": -10, "fontSize": 12, "fontWeight": "bold", "fill": "#333333"},
             "encoding": {
                 "longitude": {"field": "lon", "type": "quantitative"},
                 "latitude": {"field": "lat", "type": "quantitative"},
-                "text": {"field": "label", "type": "nominal"},
-                "opacity": {
-                    "condition": {"param": "hover", "value": 1},
-                    "value": 0.3
-                }
+                "text": {"field": "label", "type": "nominal"}
             }
         },
         {
@@ -192,26 +117,16 @@
                     }
                 ]
             },
-            "mark": {
-                "type": "rule",
-                "stroke": "#333333",
-                "strokeWidth": 1.2
-            },
+            "mark": {"type": "rule", "stroke": "#333333", "strokeWidth": 1.2},
             "encoding": {
                 "longitude": {"field": "start_lon", "type": "quantitative"},
                 "latitude": {"field": "start_lat", "type": "quantitative"},
                 "longitude2": {"field": "end_lon"},
-                "latitude2": {"field": "end_lat"},
-                "opacity": {
-                    "condition": {"param": "hover", "value": 1},
-                    "value": 0.3
-                }
+                "latitude2": {"field": "end_lat"}
             }
         }
     ],
     "config": {
-        "view": {
-            "stroke": "transparent"
-        }
+        "view": {"stroke": "transparent"}
     }
 }

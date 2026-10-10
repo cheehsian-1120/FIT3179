@@ -1,0 +1,337 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "transparent",
+    "width": 700,
+    "height": 500,
+    "params": [
+        {
+            "name": "Disease_Type",
+            "value": "All_Circulatory",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "All_Circulatory",
+                    "Ischaemic",
+                    "Heart_Failure",
+                    "Stroke"
+                ],
+                "labels": [
+                    "All Circulatory System Diseases",
+                    "Ischaemic Heart Disease",
+                    "Heart Failure",
+                    "Stroke"
+                ],
+                "name": "Select Disease Subtype: "
+            }
+        }
+    ],
+    "projection": {
+        "type": "mercator",
+        "center": [
+            140,
+            -28
+        ],
+        "scale": 700
+    },
+    "resolve": {
+        "scale": {
+            "size": "independent"
+        }
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "../json/australia_state.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "STE_2021_AUST_GDA2020"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "#f0f0f0",
+                "stroke": "#cccccc",
+                "strokeWidth": 1.0
+            }
+        },
+        {
+            "data": {
+                "url": "../data/hospitalisations_lga_centroids.csv"
+            },
+            "transform": [
+                {
+                    "filter": "Disease_Type == 'All_Circulatory'"
+                },
+                {
+                    "filter": "datum.All_Circulatory > 0"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "opacity": 0.4,
+                "strokeWidth": 0.5,
+                "fill": "#b30000",
+                "stroke": "#660000"
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "lon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "lat",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "All_Circulatory",
+                    "type": "quantitative",
+                    "title": "Hospital Admissions",
+                    "scale": {
+                        "type": "sqrt",
+                        "range": [
+                            0,
+                            2000
+                        ]
+                    },
+                    "legend": {
+                        "orient": "none",
+                        "legendX": 550,
+                        "legendY": 15,
+                        "format": ",.0f",
+                        "direction": "vertical",
+                        "titleFontSize": 16,
+                        "labelFontSize": 13,
+                        "symbolOpacity": 0.65,
+                        "fillColor": "transparent",
+                        "symbolStrokeWidth": 0.5
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "LGA_Name",
+                        "title": "Local Government Area",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "All_Circulatory",
+                        "title": "Circulatory System Diseases",
+                        "type": "quantitative",
+                        "format": ","
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "url": "../data/hospitalisations_lga_centroids.csv"
+            },
+            "transform": [
+                {
+                    "filter": "Disease_Type == 'Ischaemic'"
+                },
+                {
+                    "filter": "datum.Ischaemic > 0"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "opacity": 0.4,
+                "strokeWidth": 0.5,
+                "fill": "#d95f02",
+                "stroke": "#993404"
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "lon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "lat",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "Ischaemic",
+                    "type": "quantitative",
+                    "title": "Hospital Admissions",
+                    "scale": {
+                        "type": "sqrt",
+                        "range": [
+                            0,
+                            2000
+                        ]
+                    },
+                    "legend": {
+                        "orient": "none",
+                        "legendX": 550,
+                        "legendY": 15,
+                        "tickMinStep": 500,
+                        "tickCount": 5,
+                        "format": ",.0f",
+                        "direction": "vertical",
+                        "titleFontSize": 16,
+                        "labelFontSize": 13,
+                        "symbolOpacity": 0.65,
+                        "fillColor": "transparent",
+                        "symbolStrokeWidth": 0.5
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "LGA_Name",
+                        "title": "Local Government Area",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Ischaemic",
+                        "title": "Ischaemic Heart Disease",
+                        "type": "quantitative",
+                        "format": ","
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "url": "../data/hospitalisations_lga_centroids.csv"
+            },
+            "transform": [
+                {
+                    "filter": "Disease_Type == 'Heart_Failure'"
+                },
+                {
+                    "filter": "datum.Heart_Failure > 0"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "opacity": 0.4,
+                "strokeWidth": 0.5,
+                "fill": "#1b9e77",
+                "stroke": "#005a32"
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "lon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "lat",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "Heart_Failure",
+                    "type": "quantitative",
+                    "title": "Hospital Admissions",
+                    "scale": {
+                        "type": "sqrt",
+                        "range": [
+                            0,
+                            2000
+                        ]
+                    },
+                    "legend": {
+                        "orient": "none",
+                        "legendX": 550,
+                        "legendY": 15,
+                        "tickMinStep": 500,
+                        "tickCount": 5,
+                        "format": ",.0f",
+                        "direction": "vertical",
+                        "titleFontSize": 16,
+                        "labelFontSize": 13,
+                        "symbolOpacity": 0.65,
+                        "fillColor": "transparent",
+                        "symbolStrokeWidth": 0.5
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "LGA_Name",
+                        "title": "Local Government Area",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Heart_Failure",
+                        "title": "Heart Failure",
+                        "type": "quantitative",
+                        "format": ","
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "url": "../data/hospitalisations_lga_centroids.csv"
+            },
+            "transform": [
+                {
+                    "filter": "Disease_Type == 'Stroke'"
+                },
+                {
+                    "filter": "datum.Stroke > 0"
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "opacity": 0.4,
+                "strokeWidth": 0.5,
+                "fill": "#756bb1",
+                "stroke": "#54278f"
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "lon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "lat",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "Stroke",
+                    "type": "quantitative",
+                    "title": "Hospital Admissions",
+                    "scale": {
+                        "type": "sqrt",
+                        "range": [
+                            0,
+                            2000
+                        ]
+                    },
+                    "legend": {
+                        "orient": "none",
+                        "legendX": 550,
+                        "legendY": 15,
+                        "tickMinStep": 500,
+                        "tickCount": 5,
+                        "format": ",.0f",
+                        "direction": "vertical",
+                        "titleFontSize": 16,
+                        "labelFontSize": 13,
+                        "symbolOpacity": 0.65,
+                        "fillColor": "transparent",
+                        "symbolStrokeWidth": 0.5
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "LGA_Name",
+                        "title": "Local Government Area",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Stroke",
+                        "title": "Stroke",
+                        "type": "quantitative",
+                        "format": ","
+                    }
+                ]
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

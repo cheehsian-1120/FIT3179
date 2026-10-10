@@ -1,16 +1,43 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "transparent",
     "width": 800,
     "height": 600,
+    "padding": {"bottom": 10},
     "projection": {
         "type": "mercator",
-        "center": [134, -28], 
-        "scale": 860
+        "center": {
+            "expr": "State_Selection == 'New South Wales' ? [146, -32.5] : State_Selection == 'Victoria' ? [144.5, -36.5] : State_Selection == 'Queensland' ? [144, -22] : State_Selection == 'South Australia' ? [135, -30] : State_Selection == 'Western Australia' ? [122, -25] : State_Selection == 'Tasmania' ? [146.5, -42] : State_Selection == 'Northern Territory' ? [133.5, -20] : State_Selection == 'Australian Capital Territory' ? [149.1, -35.5] : [134, -28]"
+        },
+        "scale": {
+            "expr": "State_Selection == 'New South Wales' ? 2200 : State_Selection == 'Victoria' ? 3800 : State_Selection == 'Queensland' ? 1200 : State_Selection == 'South Australia' ? 1500 : State_Selection == 'Western Australia' ? 950 : State_Selection == 'Tasmania' ? 5000 : State_Selection == 'Northern Territory' ? 1300 : State_Selection == 'Australian Capital Territory' ? 25000 : 830"
+        }
     },
+    "params": [
+        {
+            "name": "State_Selection",
+            "value": "All", 
+            "bind": {
+                "input": "select",
+                "options": [
+                    "All",
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "South Australia",
+                    "Western Australia",
+                    "Tasmania",
+                    "Northern Territory",
+                    "Australian Capital Territory"
+                ],
+                "name": "Select State: "
+            }
+        }
+    ],
     "layer": [
         {
             "data": {
-                "url": "australia_lga.topojson",
+                "url": "../json/australia_lga.topojson",
                 "format": {
                     "type": "topojson",
                     "feature": "LGA_2021_AUST_GDA2020"
@@ -24,7 +51,7 @@
                     "lookup": "properties.LGA_CODE21",
                     "from": {
                         "data": {
-                            "url": "graph_4.csv"
+                            "url": "../data/graph_4.csv"
                         },
                         "key": "LGA_Code",
                         "fields": [
@@ -36,70 +63,46 @@
                 },
                 {
                     "filter": "isValid(datum.State)"
-                }
-            ],
-            "params": [
+                },
                 {
-                    "name": "hover",
-                    "select": {
-                        "type": "point",
-                        "on": "pointerover"
-                    }
+                    "filter": "State_Selection == 'All' || datum.properties.STE_NAME21 == State_Selection"
                 }
             ],
             "mark": {
-                "type": "geoshape"
+                "type": "geoshape",
+                "stroke": "white",
+                "strokeWidth": 0.7
             },
             "encoding": {
                 "color": {
                     "field": "Heart_Disease_ASR_100k",
                     "type": "quantitative",
                     "scale": {
-                        "scheme": "reds"
+                        "scheme": "reds",
+                        "domain": [0, 20.0] 
                     },
                     "legend": {
                         "title": "Age-Standardize Rate (per 100k)",
                         "orient": "bottom",
                         "direction": "horizontal",
-                        "titleFontSize": 16,
-                        "labelFontSize": 13,
-                        "titleLimit": 500,
-                        "gradientLength": 300,
-                        "offset": 20
+                        "titleFontSize": 14,
+                        "labelFontSize": 12,
+                        "titleLimit": 400,
+                        "gradientLength": 250,
+                        "offset": -110,
+                        "padding": 40
                     }
                 },
                 "tooltip": [
-                    {
-                        "field": "State",
-                        "title": "State"
-                    },
-                    {
-                        "field": "LGA_Name",
-                        "title": "Local Government Area"
-                    },
-                    {
-                        "field": "Heart_Disease_ASR_100k",
-                        "title": "Age-Standardize Rate",
-                        "format": ",.2f"
-                    }
-                ],
-                "opacity": {
-                    "condition": {"param": "hover", "value": 1},
-                    "value": 0.3
-                },
-                "stroke": {
-                    "condition": {"param": "hover", "empty": false, "value": "#000000"},
-                    "value": "white"
-                },
-                "strokeWidth": {
-                    "condition": {"param": "hover", "empty": false, "value": 2.5},
-                    "value": 0.7
-                }
+                    {"field": "State", "title": "State"},
+                    {"field": "LGA_Name", "title": "Local Government Area"},
+                    {"field": "Heart_Disease_ASR_100k", "title": "Age-Standardize Rate", "format": ",.2f"}
+                ]
             }
         },
         {
             "data": {
-                "url": "australia_state.topojson",
+                "url": "../json/australia_state.topojson",
                 "format": {
                     "type": "topojson",
                     "feature": "STE_2021_AUST_GDA2020"
@@ -108,13 +111,16 @@
             "transform": [
                 {
                     "filter": "datum.properties.STE_NAME21 != 'Other Territories' && datum.properties.STE_NAME21 != 'Outside Australia'"
+                },
+                {
+                    "filter": "State_Selection == 'All' || datum.properties.STE_NAME21 == State_Selection"
                 }
             ],
             "mark": {
                 "type": "geoshape",
                 "fill": null,
                 "stroke": "black",
-                "strokeWidth": 0.4
+                "strokeWidth": 0.6
             }
         }
     ],

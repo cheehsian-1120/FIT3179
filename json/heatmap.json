@@ -1,9 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "transparent",
     "width": 335,
     "height": 335,
     "data": {
-        "url": "data/graph_3.csv"
+        "url": "../data/graph_3.csv"
     },
     "transform": [
         {
@@ -115,7 +116,7 @@
                 "title": "Probability (%)",
                 "orient": "right",
                 "titleFontSize": 16,
-                "labelFontSize": 14,
+                "labelFontSize": 12,
                 "gradientLength": 200
             }
         },

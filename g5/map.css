@@ -98,7 +98,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 600px;
+    min-height: 500px;
 }
 
 /* Custom Tooltip Styling */

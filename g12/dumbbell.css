@@ -1,0 +1,73 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    margin: 0;
+}
+
+.dashboard-container {
+    background-color: white;
+    padding: 50px 50px 30px 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    max-width: 900px;
+    width: 100%;
+}
+
+.dashboard-header {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin: 0 0 10px 0;
+    color: #112233;
+}
+
+.dashboard-header h2 {
+    font-size: 20px;
+    color: #6c757d;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+.dashboard-description {
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.annotation-box {
+    background-color: #e9ecef;
+    border-left: 4px solid #adb5bd;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #495057;
+    margin: 25px auto 0 auto;
+    max-width: 650px;
+    border-radius: 0 6px 6px 0;
+    text-align: left;
+}
+
+#vis {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Custom Tooltip Formatting */
+#vg-tooltip-element {
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+    padding: 12px !important;
+}

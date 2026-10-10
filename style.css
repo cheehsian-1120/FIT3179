@@ -14,7 +14,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #fff;
+    background-color: #fff8da;
 }
 
 .container {
@@ -38,7 +38,7 @@ body {
     font-weight: 700;
     margin: 0;
     line-height: 1;
-    color: #ffffff;
+    color: #fff8da;
     text-transform: uppercase;
     display: inline-block;
     transform: scaleY(1.6); 
@@ -46,7 +46,7 @@ body {
 }
 
 .state-container {
-    background-color: #ffffff;
+    background-color: #fff8da;
     padding-top: 16px;
     text-align: center;
 }
@@ -117,11 +117,16 @@ body {
 }
 
 .chart-section {
-    background-color: #fcfcfc;
-    border: 1px solid #eaeaea;
+    background-color: rgba(252, 252, 252, 0.5); 
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(234, 234, 234, 0.5); 
+    
     border-radius: 8px;
     padding: 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .chart-title {
@@ -145,14 +150,6 @@ body {
     margin-bottom: 25px;
     overflow-x: auto;
 }
-/*
-.chart-wrapper > div,
-.chart-wrapper .vega-embed,
-.chart-wrapper canvas,
-.chart-wrapper svg {
-    max-width: 100% !important;
-    height: auto !important;
-}*/
 
 #streamgraph, #pyramid-chart {
     width: 100%;
@@ -218,11 +215,13 @@ body {
 .insight-block {
     border-left: 3px solid #8c1527; 
     padding-left: 20px;
-    background-color: #fafafa; 
+    background-color: rgba(236, 236, 236, 0.5); 
     padding: 20px;
-    border-radius: 0 4px 4px 0;
+    border-radius: 8px; 
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .insight-block h4 {
@@ -257,4 +256,117 @@ body {
 .heatmap-wrapper {
     flex: 1; 
     margin-bottom: 0 !important;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.toggle-container {
+    position: relative;
+    display: flex;
+    background-color: #eaeaea;
+    border-radius: 30px;
+    width: 330px;
+    height: 44px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.toggle-btn {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    font-size: 1.1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.toggle-btn.active {
+    color: #fff;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #8c1527;
+    border-radius: 30px;
+    z-index: 1;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#mapContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -40px !important;
+}
+
+#dropdown-container,
+#dropdown-container-symbol {
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 330px; 
+}
+
+#dropdown-container .vega-bindings,
+#dropdown-container-symbol .vega-bindings {
+    padding: 0 !important; 
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    position: static !important; 
+    width: 100%;
+}
+
+#dropdown-container .vega-bind,
+#dropdown-container-symbol .vega-bind {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#dropdown-container .vega-bind-name,
+#dropdown-container-symbol .vega-bind-name {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #8c1527; 
+    margin-bottom: 0;
+}
+
+#dropdown-container select,
+#dropdown-container-symbol select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #333;
+    border: 1px solid #8c1527;
+    border-radius: 6px;
+    background-color: #fcfcfc;
+    cursor: pointer;
+    outline: none;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+#dropdown-container select:focus,
+#dropdown-container-symbol select:focus {
+    box-shadow: 0 0 0 2px rgba(140, 21, 39, 0.2);
 }
