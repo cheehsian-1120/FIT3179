@@ -24,7 +24,7 @@
                 "titleColor": "#000000",
                 "titlePadding": 10,
                 "labelAngle": 0,
-                "labelAlign": "right",
+                "labelAlign": "left",
                 "labelFontSize": 14,
                 "labelColor": "#555",
                 "labelPadding": 15
@@ -63,8 +63,7 @@
                             "labelColor": "#555",
                             "titleFontSize": 16,
                             "titleColor": "#333",
-                            "titlePadding": 15,
-                            "domain": false
+                            "titlePadding": 15
                         }
                     },
                     "y": {
@@ -171,8 +170,8 @@
             "spacing": -50
         },
         "axis": {
-            "domain": false,
-            "ticks": false
+            "domain": true,
+            "ticks": true
         }
     }
 }
