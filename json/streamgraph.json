@@ -8,7 +8,7 @@
         "contains": "padding"
     },
     "data": {
-        "url": "data/graph_1.csv"
+        "url": "https://cheehsian-1120.github.io/FIT3179/data/graph_1.csv"
     },
     "transform": [
         {
