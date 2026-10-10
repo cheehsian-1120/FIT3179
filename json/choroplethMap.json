@@ -51,7 +51,7 @@
                     "lookup": "properties.LGA_CODE21",
                     "from": {
                         "data": {
-                            "url": ".https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/graph_4.csv"
+                            "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/graph_4.csv"
                         },
                         "key": "LGA_Code",
                         "fields": [
