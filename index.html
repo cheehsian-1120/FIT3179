@@ -214,6 +214,25 @@
                 </div>
             </div>
 
+            <div class="chart-section">
+                <h3 class="chart-title">The Weight of the Nation</h3>
+                <p class="chart-subtitle">Body Mass Index Distributions by Age in 2022</p>
+                
+                <div class="side-by-side-layout">
+                    
+                    <div class="chart-description storytelling-insights single-column-left">
+                        <div class="insight-block" style="margin-bottom: 25px;">
+                            <h4>The Age-Driven Metabolic Shift</h4>
+                            <p>As the population ages, the peak of the BMI distribution shifts progressively to the right. By the time individuals reach the 45-54 and 55-64 age brackets, a massive proportion of the population density crosses the red Obesity Threshold (BMI 30). This compounding metabolic burden acts as the primary catalyst for the surge in cardiovascular diseases among older demographics.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper heatmap-wrapper" style="overflow: visible;">
+                        <div id="ridgeLineContainer" style="display: flex; justify-content: center;"></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -313,6 +332,9 @@
                 }
             });
         }).catch(console.error);
+
+        const ridgeLineUrl = "json/ridgeLine.json"; 
+        vegaEmbed('#ridgeLineContainer', ridgeLineUrl, {actions: false}).catch(console.error);
     </script>
 
 </body>

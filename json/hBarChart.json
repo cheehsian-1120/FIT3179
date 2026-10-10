@@ -26,7 +26,8 @@
                             "sort": "-x",
                             "axis": {
                                 "labelFontSize": 14,
-                                "labelLimit": 300
+                                "labelLimit": 300,
+                                "labelColor": "#555"
                             }
                         },
                         "x": {
@@ -42,6 +43,7 @@
                                 "domain": false,
                                 "titleFontSize": 16,
                                 "labelFontSize": 14,
+                                "labelColor": "#555",
                                 "titlePadding": 15,
                                 "format": ",.0f",
                                 "values": [0, 20000, 40000, 60000, 80000, 100000, 120000, 140000, 160000, 180000],
@@ -65,7 +67,7 @@
                         "baseline": "middle",
                         "dx": 5,
                         "fontSize": 12.5,
-                        "fill": "black"
+                        "fill": "#555"
                     },
                     "encoding": {
                         "y": {
@@ -125,6 +127,7 @@
                                 "domain": false,
                                 "titleFontSize": 16,
                                 "labelFontSize": 14,
+                                "labelColor": "#555",
                                 "titlePadding": 15,
                                 "format": ",.0f",
                                 "values": [0, 3000, 6000, 9000, 12000, 15000, 18000],

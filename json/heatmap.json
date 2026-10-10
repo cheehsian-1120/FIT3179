@@ -66,7 +66,7 @@
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
                 "labelColor": {
-                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#b30000' : '#000'"
+                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#b30000' : '#555'"
                 },
                 "labelLimit": 500,
                 "domain": false,
@@ -95,7 +95,7 @@
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
                 "labelColor": {
-                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#b30000' : '#000'"
+                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#b30000' : '#555'"
                 },
                 "labelLimit": 500,
                 "domain": false,

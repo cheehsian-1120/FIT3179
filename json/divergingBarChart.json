@@ -29,6 +29,7 @@
                 "title": "Age Group",
                 "titleFontSize": 16,
                 "labelFontSize": 14,
+                "labelColor": "#555",
                 "titlePadding": 25,
                 "domain": false,
                 "ticks": false,
@@ -43,6 +44,7 @@
                 "labelExpr": "abs(datum.value)",
                 "titleFontSize": 16,
                 "labelFontSize": 14,
+                "labelColor": "#555",
                 "titlePadding": 25,
                 "grid": false,
                 "tickCount": 6

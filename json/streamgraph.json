@@ -60,6 +60,7 @@
                 "titlePadding": 20,
                 "grid": false,
                 "labelAngle": 0,
+                "labelColor": "#555",
                 "titleFontSize": 16,
                 "labelFontSize": 14
             }

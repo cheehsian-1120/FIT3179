@@ -41,7 +41,7 @@ body {
     color: #fff8da;
     text-transform: uppercase;
     display: inline-block;
-    transform: scaleY(1.6); 
+    transform: scaleY(1.8); 
     transform-origin: center; 
 }
 
@@ -58,7 +58,7 @@ body {
     margin: 0;
     line-height: 1;
     color: #8c1527;
-    transform: scaleY(1.6); 
+    transform: scaleY(1.8); 
     transform-origin: center;
 }
 
