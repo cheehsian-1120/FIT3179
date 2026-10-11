@@ -443,7 +443,7 @@ body {
 .site-footer .about .date p {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: #ffd8d8; /* Light pinkish-white for better readability on red */
+    color: #fff8da; /* Light pinkish-white for better readability on red */
 }
 
 .site-footer .links ul {
