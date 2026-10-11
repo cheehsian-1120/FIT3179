@@ -4,7 +4,8 @@
     padding: 0;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -18,14 +19,14 @@ body {
 }
 
 .container {
-    max-width: 1400px; 
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
 .top-banner {
-    background-color: #8c1527; 
-    padding: 20px 0; 
+    background-color: #8c1527;
+    padding: 20px 0;
     width: 100%;
     display: block;
     overflow: hidden;
@@ -33,7 +34,7 @@ body {
 }
 
 .logo-t1a {
-    font-family: "Times New Roman", Times, serif; 
+    font-family: "Times New Roman", Times, serif;
     font-size: 3.5rem;
     font-weight: 700;
     margin: 0;
@@ -41,8 +42,8 @@ body {
     color: #fff8da;
     text-transform: uppercase;
     display: inline-block;
-    transform: scaleY(1.8); 
-    transform-origin: center; 
+    transform: scaleY(1.8);
+    transform-origin: center;
 }
 
 .state-container {
@@ -52,13 +53,13 @@ body {
 }
 
 .logo-t1b {
-    font-family: "Times New Roman", Times, serif; 
+    font-family: "Times New Roman", Times, serif;
     font-size: 3.5rem;
     font-weight: 700;
     margin: 0;
     line-height: 1;
     color: #8c1527;
-    transform: scaleY(1.8); 
+    transform: scaleY(1.8);
     transform-origin: center;
 }
 
@@ -80,8 +81,8 @@ body {
 }
 
 .main-title {
-    font-family: Georgia, "Times New Roman", Times, serif; 
-    font-size: 2.2rem; 
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 2.2rem;
     font-weight: normal;
     color: #222;
     margin-bottom: 25px;
@@ -104,7 +105,7 @@ body {
 }
 
 .webpage-intro bold {
-    color: #8c1527; 
+    color: #8c1527;
     font-weight: 700;
 }
 
@@ -118,15 +119,15 @@ body {
 
 .chart-section {
     background-color: rgba(252, 252, 252, 0.5);
-    
+
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    border: 1px solid rgba(234, 234, 234, 0.5); 
-    
+    border: 1px solid rgba(234, 234, 234, 0.5);
+
     border-radius: 8px;
     padding: 20px 40px 40px 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .chart-title {
@@ -151,7 +152,8 @@ body {
     overflow-x: auto;
 }
 
-#streamgraph, #pyramid-chart {
+#streamgraph,
+#pyramid-chart {
     width: 100%;
     height: "auto";
     display: block;
@@ -178,7 +180,7 @@ body {
 }
 
 #vg-tooltip-element {
-    font-size: 14px !important; 
+    font-size: 14px !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     padding: 12px 18px !important;
 }
@@ -213,20 +215,20 @@ body {
 }
 
 .insight-block {
-    border-left: 3px solid #8c1527; 
+    border-left: 3px solid #8c1527;
     padding-left: 20px;
-    background-color: rgbargba(250, 250, 250, 0.7); 
+    background-color: rgbargba(250, 250, 250, 0.7);
     padding: 20px;
-    border-radius: 8px; 
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 .insight-block h4 {
-    font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 1.1rem;
     color: #8c1527;
     margin-bottom: 12px;
@@ -237,7 +239,7 @@ body {
     font-size: 1rem;
     color: #444;
     line-height: 1.7;
-    margin: 0; 
+    margin: 0;
 }
 
 .side-by-side-layout {
@@ -249,13 +251,13 @@ body {
 
 .single-column-left {
     flex: 0 0 30%;
-    margin-top: 0 !important; 
-    border-top: none !important; 
+    margin-top: 0 !important;
+    border-top: none !important;
     padding-top: 0 !important;
 }
 
 .heatmap-wrapper {
-    flex: 1; 
+    flex: 1;
     margin-bottom: 0 !important;
     min-width: 0;
     overflow: hidden;
@@ -278,7 +280,7 @@ body {
     width: 330px;
     height: 44px;
     overflow: hidden;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .toggle-btn {
@@ -321,16 +323,16 @@ body {
 #dropdown-container-symbol {
     margin-bottom: 25px;
     width: 100%;
-    max-width: 330px; 
+    max-width: 330px;
 }
 
 #dropdown-container .vega-bindings,
 #dropdown-container-symbol .vega-bindings {
-    padding: 0 !important; 
+    padding: 0 !important;
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
-    position: static !important; 
+    position: static !important;
     width: 100%;
 }
 
@@ -347,7 +349,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: #8c1527; 
+    color: #8c1527;
     margin-bottom: 0;
 }
 
@@ -364,7 +366,7 @@ body {
     cursor: pointer;
     outline: none;
     transition: box-shadow 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
 }
 
 #dropdown-container select:focus,
@@ -381,16 +383,17 @@ body {
     top: 7px;
     right: 60px;
     width: 500px;
-    z-index: 10; 
-    
-    border-left: 3px solid #8c1527; 
-    background-color: rgba(250, 250, 250, 0.7); 
+    z-index: 10;
+
+    border-left: 3px solid #8c1527;
+    background-color: rgba(250, 250, 250, 0.7);
     padding: 25px;
-    border-radius: 8px; 
+    border-radius: 8px;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
+
 .overlay-insight-block h4 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 1.1rem;
@@ -411,10 +414,10 @@ body {
 }
 
 .site-footer {
-    background-color: #8c1527; /* Matching the top banner red */
+    background-color: #8c1527;
     color: #f4f7f6;
     padding: 20px 0 10px 0;
-    margin-top: 60px; 
+    margin-top: 60px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -433,17 +436,18 @@ body {
 .site-footer .footer-section h3 {
     font-family: "Times New Roman", Times, serif;
     font-size: 1.5rem;
-    color: #fff8da; 
+    color: #fff8da;
     margin-bottom: 20px;
-    border-bottom: 2px solid #fff8da; /* Changed to cream/yellow for contrast against red background */
+    border-bottom: 2px solid #fff8da;
     display: inline-block;
     padding-bottom: 5px;
 }
 
-.site-footer .about .date p {
+.site-footer .about p,
+.site-footer .date p {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: #fff8da; /* Light pinkish-white for better readability on red */
+    color: #fff8da;
 }
 
 .site-footer .links ul {
@@ -472,5 +476,5 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 10px;
     font-size: 0.85rem;
-    color: #ffbaba; /* Slightly darker pink for the copyright text */
+    color: #ffbaba;
 }

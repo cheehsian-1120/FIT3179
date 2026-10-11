@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
 </head>
+
 <body>
 
     <header class="top-banner">
@@ -25,21 +27,19 @@
     </div>
 
     <main class="container">
-
-        <p class="category-overline">DATA DASHBOARD</p>
-        <h2 class="main-title">Cardiovascular Trends & Insights</h2>
-
-        <hr class="divider">
-
+        <p class="category-overline">DATA VISUALISATION</p>
         <p class="webpage-intro">
-            This dashboard investigates <bold>Cardiovascular Disease</bold> statistics across <bold>Australia</bold>.<br>
-            It compares <bold>hospitalisations</bold>, <bold>deaths</bold>, and <bold>various risk factors</bold> among different<br>
+            This dashboard investigates <bold>Cardiovascular Disease</bold> statistics across <bold>Australia.</bold>
+            <br>
+            It compares <bold>hospitalisations</bold>, <bold>deaths</bold>, and <bold>various risk factors</bold> among
+            different<br>
             demographic groups and populations. Furthermore, it explores the significant changes<br>
             in overall heart health trends over recent decades.
         </p>
 
-        <div class="charts-container">
+        <hr class="divider">
 
+        <div class="charts-container">
             <!----- CHART 1 ----->
             <div class="chart-section">
                 <h3 class="chart-title">Cardiovascular Mortality Trends (1980-2024)</h3>
@@ -50,12 +50,12 @@
                 <div class="chart-description storytelling-insights two-columns">
                     <div class="insight-block">
                         <h4>The Triumph of Vascular Intervention</h4>
-                        <p>The dramatic narrowing of the graph over four decades highlights how modern medicine has mastered clearing blockages and managing blood pressure. This success in keeping the heart's supply lines open has massively reduced the deadly impacts of both coronary diseases and strokes.</p>
+                        <p>The dramatic narrowing of the graph over four decades highlights how modern medicine has mastered clearing blockages and managing blood pressure. This success in keeping the heart's supply lines open has <b>massively reduced the deadly impacts</b> of both coronary diseases and strokes.</p>
                     </div>
 
                     <div class="insight-block">
                         <h4>The Bottleneck of Mechanical Fatigue</h4>
-                        <p>Despite massive overall improvements, mortality rates for structural heart issues remain stubbornly flat. While medicine excels at unclogging arteries, reversing physical wear-and-tear or repairing a weakened heart muscle (heart failure) continues to be a profound clinical challenge.</p>
+                        <p>Despite massive overall improvements, mortality rates for structural heart issues remain <b>stubbornly flat</b>. While medicine excels at unclogging arteries, <b>reversing physical wear-and-tear</b> or repairing a weakened heart muscle (heart failure) continues to be a profound clinical challenge.</p>
                     </div>
                 </div>
             </div>
@@ -67,16 +67,16 @@
                 <div class="chart-wrapper">
                     <div id="hbar-chart"></div>
                 </div>
-                
+
                 <div class="chart-description storytelling-insights two-columns">
                     <div class="insight-block">
                         <h4>The Dominance of Coronary Issues</h4>
-                        <p>In 2024, Coronary Heart Disease stands far above the rest, driving the vast majority of both acute hospital admissions and fatal outcomes. This underlines the massive scale of arterial blockages as the primary mechanism of cardiovascular crisis.</p>
+                        <p>In 2024, Coronary Heart Disease stands far above the rest, <b>driving the vast majority</b> of both acute hospital admissions and fatal outcomes. This underlines the massive scale of arterial blockages as the <b>primary mechanism</b> of cardiovascular crisis.</p>
                     </div>
 
                     <div class="insight-block">
                         <h4>Survival Disparities Among Subtypes</h4>
-                        <p>While Atrial Fibrillation causes a high number of hospitalisations, its associated mortality is comparatively low. In stark contrast, Stroke shows a much higher ratio of deaths to hospital admissions, highlighting its devastating and acute lethal nature.</p>
+                        <p>While Atrial Fibrillation causes a high number of hospitalisations, its associated mortality is comparatively low. In stark contrast, Stroke shows a <b>much higher ratio of deaths</b> to hospital admissions, highlighting its devastating and <b>acute lethal nature</b>.</p>
                     </div>
                 </div>
             </div>
@@ -84,19 +84,20 @@
             <!----- CHART 3 ----->
             <div class="chart-section">
                 <h3 class="chart-title">The Heavy Cardiovascular Burden on the Aging Population</h3>
-                <p class="chart-subtitle">Estimated population suffering from heart, stroke, and vascular diseases in 2022</p>
+                <p class="chart-subtitle">Estimated population suffering from heart, stroke, and vascular diseases in
+                    2022</p>
                 <div class="chart-wrapper">
                     <div id="pyramid-chart"></div>
                 </div>
                 <div class="chart-description storytelling-insights two-columns">
                     <div class="insight-block">
                         <h4>Age as the Primary Driver</h4>
-                        <p>The pyramid clearly demonstrates that cardiovascular conditions are overwhelmingly concentrated in the 65+ age demographic. This directly reinforces our previous finding: mechanical fatigue and age-related structural decline remain the most significant bottlenecks in current cardiovascular care.</p>
+                        <p>The pyramid clearly demonstrates that cardiovascular conditions are <b>overwhelmingly concentrated in the 65+ age demographic</b>. This directly reinforces our previous finding: <b>mechanical fatigue</b> and <b>age-related structural decline</b> remain the most significant bottlenecks in current cardiovascular care.</p>
                     </div>
 
                     <div class="insight-block">
                         <h4>The Universal Burden of Aging</h4>
-                        <p>While the distribution shows minor variations in younger cohorts, the absolute number of affected individuals surges massively for both males and females in later life. This visual weight at the bottom of the pyramid emphasizes that cardiovascular aging is a universal burden, paving the way for complex comorbidities.</p>
+                        <p>While the distribution shows minor variations in younger cohorts, the absolute number of affected individuals <b>surges massively</b> for both males and females in later life. This visual weight at the bottom of the pyramid emphasizes that cardiovascular aging is a <b>universal burden</b>, paving the way for complex comorbidities.</p>
                     </div>
                 </div>
             </div>
@@ -104,12 +105,13 @@
             <!----- CHART 4 ----->
             <div class="chart-section">
                 <h3 class="chart-title">The Comorbidity of Heart Disease and Chronic Illness</h3>
-                <p class="chart-subtitle">Probability rates of overlapping secondary conditions for diagnosed patients in 2022</p>
-                <div class="side-by-side-layout">
+                <p class="chart-subtitle">Probability rates of overlapping secondary conditions for diagnosed patients
+                    in 2022</p>
+                <div class="side-by-side-layout" style="margin-bottom: -20px;">
                     <div class="chart-description storytelling-insights single-column-left">
                         <div class="insight-block">
                             <h4>The Compounded Mobility Burden</h4>
-                            <p>The darkest intersections on the heatmap reveal a striking reality: patients with cardiovascular disease have the highest probability of concurrently suffering from arthritis and back problems (dorsopathies). This indicates that heart conditions are deeply entangled with severe physical mobility limitations, compounding the daily physical toll on affected individuals.</p>
+                            <p>The darkest intersections on the heatmap reveal a striking reality: patients with cardiovascular disease have the <b>highest probability of concurrently suffering from arthritis and back problems</b> (dorsopathies). This indicates that heart conditions are deeply entangled with <b>severe physical mobility limitations</b>, compounding the daily physical toll on affected individuals.</p>
                         </div>
                     </div>
                     <div class="chart-wrapper heatmap-wrapper">
@@ -122,11 +124,11 @@
             <div class="chart-section">
                 <h3 class="chart-title">Australia's Heart Disease Landscape</h3>
                 <p class="chart-subtitle">Age-Standardised Rate (ASR) per 100,000 population in 2021</p>
-                
-                <div class="side-by-side-layout">
-                    
+
+                <div class="side-by-side-layout" style="margin-bottom: -20px;">
+
                     <div class="chart-description storytelling-insights single-column-left">
-                        
+
                         <div class="toggle-wrapper toggle-left">
                             <div class="toggle-container" id="mapToggle">
                                 <div class="toggle-btn active" data-map="state">State</div>
@@ -139,12 +141,12 @@
 
                         <div id="insight-state" class="insight-block">
                             <h4>State-Level Disparities</h4>
-                            <p>At the macro level, the Northern Territory shows a markedly higher Age-Standardised Rate of heart disease, highlighting unique geographic and demographic health challenges in these broader regions compared to the eastern states.</p>
+                            <p>At the macro level, the <b>Northern Territory shows a markedly higher Age-Standardised Rate</b> of heart disease, highlighting unique geographic and demographic health challenges in these broader regions compared to the eastern states.</p>
                         </div>
 
                         <div id="insight-lga" class="insight-block" style="display: none;">
                             <h4>Local Community Impact</h4>
-                            <p>Zooming into the Local Government Area level exposes stark localized contrasts. Even within states with better overall averages, specific local communities face severe cardiovascular burdens, emphasizing the need for targeted, community-level healthcare interventions.</p>
+                            <p>Zooming into the Local Government Area level exposes <b>stark localized contrasts</b>. Even within states with better overall averages, specific local communities face <b>severe cardiovascular burdens</b>, emphasizing the need for targeted, community-level healthcare interventions.</p>
                         </div>
                     </div>
 
@@ -158,17 +160,18 @@
             <!----- CHART 6 ----->
             <div class="chart-section" style="padding-bottom: 0px;">
                 <h3 class="chart-title">Healthcare Demand Hotspots</h3>
-                <p class="chart-subtitle">Visualising the sheer volume of cardiovascular admissions by local government areas in 2022/23</p>
+                <p class="chart-subtitle">Visualising the sheer volume of cardiovascular admissions by local government
+                    areas in 2022/23</p>
 
-                <div class="side-by-side-layout">
-                    
+                <div class="side-by-side-layout" style="margin-bottom: -20px;">
+
                     <div class="chart-description storytelling-insights single-column-left">
-                        
+
                         <div id="dropdown-container-symbol"></div>
 
                         <div class="insight-block">
                             <h4>The Urban Pressure</h4>
-                            <p>While regional areas may show higher disease rates per capita, the absolute volume of patients heavily strains coastal metropolitan hubs. This stark contrast highlights the dual challenge in cardiovascular care: equitable access in remote areas versus immense capacity management in urban centers.</p>
+                            <p>While regional areas may show higher disease rates per capita, the absolute volume of patients <b>heavily strains coastal metropolitan hubs</b>. This stark contrast highlights the dual challenge in cardiovascular care: equitable access in remote areas versus <b>immense capacity management</b> in urban centers.</p>
                         </div>
                     </div>
 
@@ -181,11 +184,12 @@
             <!----- CHART 7 ----->
             <div class="chart-section">
                 <h3 class="chart-title">Australian Lifestyle Risk Factors</h3>
-                <p class="chart-subtitle">A 2022 demographic breakdown of lifestyle risks. (1 Hexagon = 250,000 Adults)</p>
-                
+                <p class="chart-subtitle">A 2022 demographic breakdown of lifestyle risks. (1 Hexagon = 250,000 Adults)
+                </p>
+
                 <div class="side-by-side-layout" style="margin-bottom: -100px;">
                     <div class="chart-description storytelling-insights single-column-left">
-                        
+
                         <div id="dropdown-container" style="margin-bottom: 25px;">
                             <div class="vega-bind">
                                 <span class="vega-bind-name">Select Risk Factor:</span>
@@ -199,17 +203,17 @@
 
                         <div id="insight-smoking" class="insight-block">
                             <h4>Smoking Prevalence</h4>
-                            <p>Queensland (QLD) and the Northern Territory (NT) exhibit the highest smoking prevalences nationwide. This stark geographic concentration highlights an urgent need for targeted tobacco control policies and public health resources tailored to these specific demographic profiles.</p>
+                            <p><b>Queensland (QLD)</b> and the <b>Northern Territory (NT)</b> exhibit the highest smoking prevalences nationwide. This stark geographic concentration highlights an urgent need for targeted tobacco control policies and public health resources tailored to these specific demographic profiles.</p>
                         </div>
-                        
+
                         <div id="insight-obesity" class="insight-block" style="display: none;">
                             <h4>The Obesity Challenge</h4>
-                            <p>Obesity is a severe, widespread challenge, with prevalence rates peaking dangerously high in Tasmania (TAS), Western Australia (WA), and the Northern Territory (NT). This systemic metabolic burden acts as a primary catalyst for future cardiovascular complications, demanding aggressive structural health interventions.</p>
+                            <p>Obesity is a severe, widespread challenge, with prevalence rates <b>peaking dangerously high</b> in <b>Tasmania (TAS)</b>, <b>Western Australia (WA)</b>, and the <b>Northern Territory (NT)</b>. This systemic <b>metabolic burden</b> acts as a primary catalyst for future cardiovascular complications, demanding aggressive structural health interventions.</p>
                         </div>
-                        
+
                         <div id="insight-hypertension" class="insight-block" style="display: none;">
                             <h4>Hypertension Burden</h4>
-                            <p>High blood pressure clusters significantly in southern regions, particularly Tasmania (TAS) and South Australia (SA). As a potent "silent killer," this pattern signals a critical necessity for these states to prioritize early diagnostic screening and robust primary care management.</p>
+                            <p>High blood pressure clusters significantly in southern regions, particularly <b>Tasmania (TAS)</b> and <b>South Australia (SA)</b>. As a potent <b>"silent killer,"</b> this pattern signals a critical necessity for these states to prioritize early diagnostic screening and robust primary care management.</p>
                         </div>
                     </div>
 
@@ -223,13 +227,13 @@
             <div class="chart-section">
                 <h3 class="chart-title">The Weight of the Nation</h3>
                 <p class="chart-subtitle">Body Mass Index Distributions by Age in 2022</p>
-                
-                <div class="side-by-side-layout">
-                    
+
+                <div class="side-by-side-layout" style="margin-bottom: -20px;">
+
                     <div class="chart-description storytelling-insights single-column-left">
                         <div class="insight-block" style="margin-bottom: 25px;">
                             <h4>The Age-Driven Metabolic Shift</h4>
-                            <p>As the population ages, the peak of the BMI distribution shifts progressively to the right. By the time individuals reach the 45-54 and 55-64 age brackets, a massive proportion of the population density crosses the red Obesity Threshold (BMI 30). This compounding metabolic burden acts as the primary catalyst for the surge in cardiovascular diseases among older demographics.</p>
+                            <p>As the population ages, the peak of the <b>BMI distribution shifts progressively to the right</b>. By the time individuals reach the 45-54 and 55-64 age brackets, a massive proportion of the population density crosses the red Obesity Threshold (BMI 30). This compounding <b>metabolic burden acts as the primary catalyst</b> for the surge in cardiovascular diseases among older demographics.</p>
                         </div>
                     </div>
 
@@ -243,22 +247,25 @@
             <div class="chart-section">
                 <h3 class="chart-title">Age-Driven Medical Interventions</h3>
                 <p class="chart-subtitle">Dispensing Heart Medication by Age Segment in 2022</p>
-                
-                <div class="chart-wrapper relative-wrapper" style="display: flex; justify-content: center; overflow: visible; position: relative; min-height: 450px;">
-                    
+
+                <div class="chart-wrapper relative-wrapper"
+                    style="display: flex; justify-content: center; overflow: visible; position: relative; min-height: 450px;">
+
                     <div id="lollipopContainer"></div>
-                    
+
                     <!-- The Absolutely Positioned Insight Block (Floating on the right) -->
                     <div class="overlay-insight-block">
                         <h4>The Exponential Aging Curve</h4>
-                        <p>The volume of cardiovascular medication explodes to an overwhelming <strong>3.1 million</strong> prescriptions for the 65+ demographic. This confirms that systemic physiological aging remains the ultimate driver of heart disease.</p>
+                        <p>The <b>volume of cardiovascular medication</b> explodes to an overwhelming <strong>3.1 million</strong> prescriptions for the 65+ demographic. This confirms that systemic physiological aging remains the ultimate driver of heart disease.</p>
                     </div>
 
                 </div>
-                
+
                 <div class="chart-description storytelling-insights">
-                    <div class="insight-block" style="background-color: rgba(250, 250, 250, 0.7); border-left: 3px solid #8c1527; padding-left: 15px; width: 530px">
-                        <h4 style="color: #8c1527; font-size: 1.1rem; margin-bottom: 8px;">Understanding the PBS Data</h4>
+                    <div class="insight-block"
+                        style="background-color: rgba(250, 250, 250, 0.7); border-left: 3px solid #8c1527; padding-left: 15px; width: 530px">
+                        <h4 style="color: #8c1527; font-size: 1.1rem; margin-bottom: 8px;">Understanding the PBS Data
+                        </h4>
                         <p style="color: #444; font-size: 0.95rem;">The <strong>Pharmaceutical Benefits Scheme (PBS)</strong> is Australia's national prescription subsidy program. Tracking actual PBS dispensing provides a highly accurate, real-world measure of disease prevalence compared to self-reported surveys.</p>
                     </div>
                 </div>
@@ -268,20 +275,20 @@
             <div class="chart-section">
                 <h3 class="chart-title">Socioeconomic Medical Intervention</h3>
                 <p class="chart-subtitle">Pharmaceutical Dependency Across Socio-Economic Quintiles</p>
-                
+
                 <div class="chart-wrapper" style="display: flex; justify-content: center; overflow: visible;">
                     <div id="dumbbellContainer"></div>
                 </div>
-                
+
                 <div class="chart-description storytelling-insights two-columns">
                     <div class="insight-block">
                         <h4>The Biological Chain Reaction</h4>
-                        <p>While basic infections affect all incomes equally, poverty triggers a specific physiological chain reaction. The poorest quintile relies on metabolic medication (treating obesity and diabetes) at a rate 66% higher than the wealthiest. This severe metabolic breakdown acts as the primary catalyst for long-term vascular damage.</p>
+                        <p>While basic infections affect all incomes equally, poverty triggers a specific physiological chain reaction. The poorest quintile relies on metabolic medication (treating obesity and diabetes) at a rate <b>66% higher than the wealthiest</b>. This <b>severe metabolic breakdown</b> acts as the primary catalyst for long-term vascular damage.</p>
                     </div>
 
                     <div class="insight-block">
                         <h4>A Compounded Systemic Collapse</h4>
-                        <p>Simultaneously, a higher reliance on nervous system medications highlights the chronic mental stress of poverty, which directly sustains high blood pressure. These compounded burdens-metabolic failure and nervous strain-ultimately converge to drive the massive 40% higher dependency on cardiovascular medications in the poorest communities.</p>
+                        <p>Simultaneously, a higher reliance on nervous system medications highlights the <b>chronic mental stress of poverty</b>, which directly sustains high blood pressure. These compounded burdens-metabolic failure and nervous strain-ultimately converge to drive the massive <b>40% higher dependency</b> on cardiovascular medications in the poorest communities.</p>
                     </div>
                 </div>
             </div>
@@ -290,51 +297,54 @@
     </main>
 
     <footer class="site-footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>Author</h3>
-                <p>Tay Chee Hsian<br></p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Author</h3>
+                    <p>Tay Chee Hsian<br></p>
+                </div>
+                <div class="footer-section date">
+                    <h3>Published Date</h3>
+                    <p>23 October 2026</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Data Sources</h3>
+                    <ul>
+                        <li><a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/heart-stroke-and-vascular-disease/latest-release"
+                                target="_blank">Australian Bureau of Statistics (ABS)</a></li>
+                        <li><a href="https://www.aihw.gov.au/reports/heart-stroke-vascular-diseases/hsvd-facts/contents/summary"
+                                target="_blank">Australian Institute of Health and Welfare (AIHW)</a></li>
+                        <li><a href="https://phidu.torrens.edu.au/social-health-atlases/data?utm_source=gemini#social-health-atlas-of-australia-population-health-areas"
+                                target="_blank">PHIDU Torrens University Australia</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section date">
-                <h3>Published Date</h3>
-                <p>23 October 2026</p>
-            </div>
-            <div class="footer-section links">
-                <h3>Data Sources</h3>
-                <ul>
-                    <li><a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/heart-stroke-and-vascular-disease/latest-release" target="_blank">Australian Bureau of Statistics (ABS)</a></li>
-                    <li><a href="https://www.aihw.gov.au/reports/heart-stroke-vascular-diseases/hsvd-facts/contents/summary" target="_blank">Australian Institute of Health and Welfare (AIHW)</a></li>
-                    <li><a href="https://phidu.torrens.edu.au/social-health-atlases/data?utm_source=gemini#social-health-atlas-of-australia-population-health-areas" target="_blank">PHIDU Torrens University Australia</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Australia Heart Health Dashboard. Created by Tay Chee Hsian.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Australia Heart Health Dashboard. Created by Tay Chee Hsian.</p>
-        </div>
-    </div>
     </footer>
 
     <script>
         // CHART 1
         var spec1 = "json/streamgraph.json";
-        vegaEmbed('#streamgraph', spec1, { 
+        vegaEmbed('#streamgraph', spec1, {
             actions: false
         }).catch(console.error);
 
         // CHART 2
-        var spec2 = "json/hBarChart.json"; 
+        var spec2 = "json/hBarChart.json";
         vegaEmbed('#hbar-chart', spec2, { actions: false }).catch(console.error);
 
         // CHART 3
-        var spec3 = "json/divergingBarChart.json"; 
-        vegaEmbed('#pyramid-chart', spec3, { 
+        var spec3 = "json/divergingBarChart.json";
+        vegaEmbed('#pyramid-chart', spec3, {
             actions: false
         }).catch(console.error);
 
         // CHART 4
-        var spec4 = "json/heatmap.json"; 
-        vegaEmbed('#heatmap', spec4, { 
+        var spec4 = "json/heatmap.json";
+        vegaEmbed('#heatmap', spec4, {
             actions: false
         }).catch(console.error);
 
@@ -348,9 +358,9 @@
                 dropdownContainer.innerHTML = '';
             }
 
-            vegaEmbed('#mapContainer', specUrl, {actions: false}).then(function(result) {
+            vegaEmbed('#mapContainer', specUrl, { actions: false }).then(function (result) {
                 const bindings = document.querySelector('#mapContainer .vega-bindings');
-                
+
                 if (bindings && dropdownContainer) {
                     dropdownContainer.appendChild(bindings);
                 }
@@ -367,7 +377,7 @@
             btn.addEventListener('click', () => {
                 buttons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
+
                 slider.style.transform = `translateX(${index * 100}%)`;
 
                 if (btn.dataset.map === "state") {
@@ -383,8 +393,8 @@
         });
 
         // CHART 6
-        const symbolMapUrl = "json/symbolMap.json"; 
-        vegaEmbed('#symbolMapContainer', symbolMapUrl, {actions: false}).then(function(result) {
+        const symbolMapUrl = "json/symbolMap.json";
+        vegaEmbed('#symbolMapContainer', symbolMapUrl, { actions: false }).then(function (result) {
             const dropdownContainerSymbol = document.getElementById('dropdown-container-symbol');
             const bindings = document.querySelector('#symbolMapContainer .vega-bindings');
             if (bindings && dropdownContainerSymbol) {
@@ -393,21 +403,21 @@
         }).catch(console.error);
 
         // CHART 7
-        const hexCartoUrl = "json/hexCarto.json"; 
-        vegaEmbed('#hexCartoContainer', hexCartoUrl, {actions: false}).then(function(result) {
+        const hexCartoUrl = "json/hexCarto.json";
+        vegaEmbed('#hexCartoContainer', hexCartoUrl, { actions: false }).then(function (result) {
             const view = result.view;
-            
+
             const riskDropdown = document.getElementById('riskDropdown');
-            
+
             riskDropdown.addEventListener('change', (event) => {
                 const selectedRisk = event.target.value;
-                
+
                 view.signal('Health_Risk', selectedRisk).runAsync();
 
                 document.getElementById("insight-smoking").style.display = "none";
                 document.getElementById("insight-obesity").style.display = "none";
                 document.getElementById("insight-hypertension").style.display = "none";
-                
+
                 if (selectedRisk === "Smoking_Pct") {
                     document.getElementById("insight-smoking").style.display = "flex";
                 } else if (selectedRisk === "Obesity_Pct") {
@@ -419,17 +429,18 @@
         }).catch(console.error);
 
         // CHART 8
-        const ridgeLineUrl = "json/ridgeLine.json"; 
-        vegaEmbed('#ridgeLineContainer', ridgeLineUrl, {actions: false}).catch(console.error);
+        const ridgeLineUrl = "json/ridgeLine.json";
+        vegaEmbed('#ridgeLineContainer', ridgeLineUrl, { actions: false }).catch(console.error);
 
         // CHART 9
-        const lollipopUrl = "json/lollipop.json"; 
-        vegaEmbed('#lollipopContainer', lollipopUrl, {actions: false}).catch(console.error);
+        const lollipopUrl = "json/lollipop.json";
+        vegaEmbed('#lollipopContainer', lollipopUrl, { actions: false }).catch(console.error);
 
         // CHART 10
-        const dumbbellUrl = "json/dumbbell.json"; 
-        vegaEmbed('#dumbbellContainer', dumbbellUrl, {actions: false}).catch(console.error);
+        const dumbbellUrl = "json/dumbbell.json";
+        vegaEmbed('#dumbbellContainer', dumbbellUrl, { actions: false }).catch(console.error);
     </script>
 
 </body>
+
 </html>
