@@ -115,8 +115,10 @@
             "legend": {
                 "title": "Probability (%)",
                 "orient": "right",
-                "titleFontSize": 16,
+                "titleFontSize": 15,
+                "titleColor": "#444",
                 "labelFontSize": 12,
+                "labelColor": "#555",
                 "gradientLength": 200
             }
         },

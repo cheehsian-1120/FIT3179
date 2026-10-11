@@ -25,12 +25,10 @@
                 "titleColor": "#000000",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#000000",
+                "labelColor": "#555",
                 "labelPadding": 10,
                 "grid": false,
                 "domain": true,
-                "domainColor": "#000000",
-                "domainWidth": 1,
                 "ticks": false
             }
         },
@@ -43,11 +41,10 @@
                 "titleColor": "#000000",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#000000",
+                "labelColor": "#555",
                 "grid": false,
-                "domain": true,
-                "domainColor": "#000000",
-                "format": ".2s"
+                "format": ".2s",
+                "tickCount": 8
             }
         }
     },
@@ -125,6 +122,9 @@
     "config": {
         "view": {
             "stroke": "transparent"
+        },
+        "axis": {
+            "domain": true
         }
     }
 }

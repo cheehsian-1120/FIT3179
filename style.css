@@ -117,7 +117,7 @@ body {
 }
 
 .chart-section {
-    background-color: rgba(252, 252, 252, 0.5); 
+    background-color: rgba(252, 252, 252, 0.5);
     
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -125,7 +125,7 @@ body {
     border: 1px solid rgba(234, 234, 234, 0.5); 
     
     border-radius: 8px;
-    padding: 40px;
+    padding: 20px 40px 40px 40px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
@@ -134,7 +134,7 @@ body {
     font-size: 2rem;
     font-weight: normal;
     color: #222;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     border-bottom: 2px solid #8c1527;
     display: inline-block;
 }
@@ -178,18 +178,18 @@ body {
 }
 
 #vg-tooltip-element {
-    font-size: 16px !important; 
+    font-size: 14px !important; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     padding: 12px 18px !important;
 }
 
 #vg-tooltip-element h2 {
-    font-size: 18px !important;
+    font-size: 13px !important;
     margin-bottom: 8px !important;
 }
 
 #vg-tooltip-element table td {
-    font-size: 16px !important;
+    font-size: 13px !important;
     padding: 2px 0 !important;
 }
 
@@ -215,13 +215,14 @@ body {
 .insight-block {
     border-left: 3px solid #8c1527; 
     padding-left: 20px;
-    background-color: rgba(236, 236, 236, 0.5); 
+    background-color: rgbargba(250, 250, 250, 0.7); 
     padding: 20px;
     border-radius: 8px; 
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
 .insight-block h4 {
@@ -369,4 +370,42 @@ body {
 #dropdown-container select:focus,
 #dropdown-container-symbol select:focus {
     box-shadow: 0 0 0 2px rgba(140, 21, 39, 0.2);
+}
+
+.chart-wrapper.relative-wrapper {
+    position: relative;
+}
+
+.overlay-insight-block {
+    position: absolute;
+    top: 7px;
+    right: 60px;
+    width: 500px;
+    z-index: 10; 
+    
+    border-left: 3px solid #8c1527; 
+    background-color: rgba(250, 250, 250, 0.7); 
+    padding: 25px;
+    border-radius: 8px; 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+.overlay-insight-block h4 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.2rem;
+    color: #8c1527;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.overlay-insight-block p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.overlay-insight-block p:last-child {
+    margin-bottom: 0;
 }

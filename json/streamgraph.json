@@ -62,6 +62,7 @@
                 "labelAngle": 0,
                 "labelColor": "#555",
                 "titleFontSize": 16,
+                "titleColor": "#444",
                 "labelFontSize": 14
             }
         },

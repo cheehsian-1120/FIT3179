@@ -21,7 +21,7 @@
             "header": {
                 "title": "Age Groups",
                 "titleFontSize": 16,
-                "titleColor": "#000000",
+                "titleColor": "#444",
                 "titlePadding": 10,
                 "labelAngle": 0,
                 "labelAlign": "left",
@@ -62,7 +62,7 @@
                             "labelFontSize": 14,
                             "labelColor": "#555",
                             "titleFontSize": 16,
-                            "titleColor": "#333",
+                            "titleColor": "#444",
                             "titlePadding": 15
                         }
                     },
@@ -82,7 +82,7 @@
                         "field": "Age_Sort",
                         "type": "quantitative",
                         "scale": {
-                            "scheme": "teals",
+                            "scheme": "purples",
                             "reverse": false
                         },
                         "legend": null

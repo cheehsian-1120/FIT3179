@@ -28,6 +28,7 @@
             "axis": {
                 "title": "Age Group",
                 "titleFontSize": 16,
+                "titleColor": "#444",
                 "labelFontSize": 14,
                 "labelColor": "#555",
                 "titlePadding": 25,
@@ -43,6 +44,7 @@
             "axis": {
                 "labelExpr": "abs(datum.value)",
                 "titleFontSize": 16,
+                "titleColor": "#444",
                 "labelFontSize": 14,
                 "labelColor": "#555",
                 "titlePadding": 25,
@@ -64,7 +66,9 @@
                 "fillColor": "transparent",
                 "padding": 5,
                 "titleFontSize": 16,
+                "titleColor": "#444",
                 "labelFontSize": 14,
+                "labelColor": "#555",
                 "symbolSize": 150
             }
         },

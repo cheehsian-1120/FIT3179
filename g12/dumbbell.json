@@ -20,17 +20,14 @@
             "axis": {
                 "title": "Medication Category",
                 "titleFontSize": 16,
-                "titleColor": "#000000",
+                "titleColor": "#444",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#000000",
+                "labelColor": "#555",
                 "labelPadding": 10,
                 "labelLimit": 500,
                 "grid": false,
-                "ticks": false,
-                "domain": true,
-                "domainColor": "#000000",
-                "domainWidth": 1
+                "ticks": true
             }
         },
         "x": {
@@ -39,12 +36,12 @@
             "title": "Per-Capita Dispensing Rate (%)",
             "axis": {
                 "titleFontSize": 16,
-                "titleColor": "#000000",
+                "titleColor": "#444",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#000000",
+                "labelColor": "#555",
                 "grid": false,
-                "domainColor": "#000000"
+                "tickCount": 9
             }
         }
     },
@@ -78,16 +75,17 @@
                             "Fifth quintile"
                         ],
                         "range": [
-                            "#e63946",
-                            "#457b9d"
+                            "#fc8d62",
+                            "#8da0cb"
                         ]
                     },
                     "legend": {
                         "title": "Socio-Economic Status",
+                        "titleColor": "#444",
                         "orient": "top",
-                        "titleFontSize": 13,
-                        "labelFontSize": 13,
-                        "padding": 15
+                        "titleFontSize": 16,
+                        "labelFontSize": 14,
+                        "padding": 0
                     }
                 },
                 "tooltip": [
@@ -113,7 +111,6 @@
                 "type": "text",
                 "baseline": "middle",
                 "fontSize": 13,
-                "fontWeight": "bold",
                 "align": {
                     "expr": "datum['Income Quintile Clean'] == 'First quintile' ? 'left' : 'right'"
                 },
@@ -137,8 +134,8 @@
                             "Fifth quintile"
                         ],
                         "range": [
-                            "#e63946",
-                            "#457b9d"
+                            "#fc8d62",
+                            "#8da0cb"
                         ]
                     }
                 }
@@ -148,6 +145,9 @@
     "config": {
         "view": {
             "stroke": "transparent"
+        },
+        "axis": {
+            "domain": true
         },
         "font": "Segoe UI, sans-serif"
     }
