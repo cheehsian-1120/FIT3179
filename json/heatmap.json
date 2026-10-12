@@ -106,7 +106,7 @@
             "field": "Probability",
             "type": "quantitative",
             "scale": {
-                "scheme": "oranges",
+                "scheme": "greens",
                 "domain": [
                     0,
                     50

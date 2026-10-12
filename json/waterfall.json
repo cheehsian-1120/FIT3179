@@ -2,8 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Waterfall chart of Cardiovascular Disease Expenditure",
     "background": "transparent",
-    "width": 800,
-    "height": 400,
+    "width": 900,
+    "height": 350,
     "data": {
         "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/cost.csv",
         "format": {
@@ -89,7 +89,14 @@
                 "labelColor": "#555",
                 "labelPadding": 10,
                 "labelLineHeight": 14,
-                "labelExpr": "split(datum.value, ' ')"
+                "labelExpr": "split(datum.value, ' ')",
+                "labelFontWeight": {
+                    "condition": {
+                        "test": "datum.value == 'Total Expenditure'",
+                        "value": "bold"
+                    },
+                    "value": "normal"
+                }
             }
         }
     },
@@ -124,7 +131,7 @@
                         "order": "ascending"
                     },
                     "scale": {
-                        "scheme": "accent"
+                        "scheme": "tableau10"
                     },
                     "legend": null
                 },
