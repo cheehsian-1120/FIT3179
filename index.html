@@ -293,6 +293,28 @@
                 </div>
             </div>
 
+            <!----- CHART 11 ----->
+            <div class="chart-section">
+                <h3 class="chart-title">The Financial Toll of Heart Health</h3>
+                <p class="chart-subtitle">A breakdown of the $16.9 Billion spent on cardiovascular diseases in 2023-24</p>
+                
+                <div class="chart-wrapper" style="display: flex; justify-content: center; overflow: visible; margin-bottom: 30px;">
+                    <div id="waterfallContainer"></div>
+                </div>
+                
+                <div class="chart-description storytelling-insights two-columns">
+                    <div class="insight-block">
+                        <h4>The National Financial Burden</h4>
+                        <p>The socioeconomic disparities in medication reliance ultimately translate into a massive national expense. Cardiovascular disease ranks among Australia's most costly health conditions, draining a staggering <strong>$16.9 billion</strong> from the healthcare system annually, far exceeding the budget for most other chronic illnesses.</p>
+                    </div>
+
+                    <div class="insight-block">
+                        <h4>The Cost of Delayed Intervention</h4>
+                        <p>A striking <strong>62% of all cardiovascular expenditure</strong> is consumed by acute public and private hospital admissions. Conversely, early preventative measures, such as GP visits and specialist consultations, constitute only a marginal fraction. This stark imbalance highlights how delaying primary care treatment directly drives catastrophic structural healthcare costs.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -439,6 +461,10 @@
         // CHART 10
         const dumbbellUrl = "json/dumbbell.json";
         vegaEmbed('#dumbbellContainer', dumbbellUrl, { actions: false }).catch(console.error);
+
+        // CHART 11
+        const waterfallUrl = "json/waterfall.json";
+        vegaEmbed('#waterfallContainer', waterfallUrl, {actions: false}).catch(console.error);
     </script>
 
 </body>
