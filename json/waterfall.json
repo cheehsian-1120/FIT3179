@@ -12,7 +12,7 @@
     },
     "transform": [
         {
-            "calculate": "replace(datum[' Total expenditure $'], /,/g, '')",
+            "calculate": "replace(datum['Total expenditure $'], /,/g, '')",
             "as": "raw_amount"
         },
         {
@@ -124,7 +124,7 @@
                         "order": "ascending"
                     },
                     "scale": {
-                        "scheme": "observable10"
+                        "scheme": "accent"
                     },
                     "legend": null
                 },
