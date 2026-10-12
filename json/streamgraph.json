@@ -91,7 +91,9 @@
                 "fillColor": "transparent",
                 "padding": 2,
                 "titleFontSize": 16,
+                "titleColor": "#444",
                 "labelFontSize": 14,
+                "labelColor": "#555",
                 "symbolSize": 150,
                 "labelLimit": 300
             }

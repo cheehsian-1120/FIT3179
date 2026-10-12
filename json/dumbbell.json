@@ -88,6 +88,7 @@
                         "orient": "top",
                         "titleFontSize": 16,
                         "labelFontSize": 14,
+                        "labelColor": "#555",
                         "padding": 0
                     }
                 },
