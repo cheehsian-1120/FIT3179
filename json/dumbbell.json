@@ -78,8 +78,8 @@
                             "Fifth quintile"
                         ],
                         "range": [
-                            "#fc8d62",
-                            "#8da0cb"
+                            "#1f77b4",
+                            "#d62728"
                         ]
                     },
                     "legend": {
@@ -137,8 +137,8 @@
                             "Fifth quintile"
                         ],
                         "range": [
-                            "#fc8d62",
-                            "#8da0cb"
+                            "#1f77b4",
+                            "#d62728"
                         ]
                     }
                 }
