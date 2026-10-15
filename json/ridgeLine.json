@@ -21,12 +21,12 @@
             "header": {
                 "title": "Age Groups",
                 "titleFontSize": 16,
-                "titleColor": "#444",
+                "titleColor": "#555555cd",
                 "titlePadding": 10,
                 "labelAngle": 0,
                 "labelAlign": "left",
                 "labelFontSize": 14,
-                "labelColor": "#555",
+                "labelColor": "#555555cd",
                 "labelPadding": 15
             }
         }
@@ -60,9 +60,9 @@
                             "grid": false,
                             "tickCount": 6,
                             "labelFontSize": 14,
-                            "labelColor": "#555",
+                            "labelColor": "#555555cd",
                             "titleFontSize": 16,
-                            "titleColor": "#444",
+                            "titleColor": "#555555cd",
                             "titlePadding": 15
                         }
                     },

@@ -23,10 +23,10 @@
             "axis": {
                 "title": "Age Group",
                 "titleFontSize": 16,
-                "titleColor": "#444",
+                "titleColor": "#555555cd",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#555",
+                "labelColor": "#555555cd",
                 "labelPadding": 10,
                 "grid": false,
                 "domain": true,
@@ -39,10 +39,10 @@
             "axis": {
                 "title": "Total Dispensed Volume (PBS)",
                 "titleFontSize": 16,
-                "titleColor": "#444",
+                "titleColor": "#555555cd",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#555",
+                "labelColor": "#555555cd",
                 "grid": false,
                 "format": ".2s",
                 "tickCount": 8

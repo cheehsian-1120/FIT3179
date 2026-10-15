@@ -21,10 +21,10 @@
             "axis": {
                 "title": "Medication Category",
                 "titleFontSize": 16,
-                "titleColor": "#444",
+                "titleColor": "#555555cd",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#555",
+                "labelColor": "#555555cd",
                 "labelPadding": 10,
                 "labelLimit": 500,
                 "grid": false,
@@ -39,10 +39,10 @@
             "title": "Per-Capita Dispensing Rate (%)",
             "axis": {
                 "titleFontSize": 16,
-                "titleColor": "#444",
+                "titleColor": "#555555cd",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#555",
+                "labelColor": "#555555cd",
                 "grid": false,
                 "tickCount": 9
             }
@@ -84,11 +84,11 @@
                     },
                     "legend": {
                         "title": "Socio-Economic Status",
-                        "titleColor": "#444",
+                        "titleColor": "#555555cd",
                         "orient": "top",
                         "titleFontSize": 16,
                         "labelFontSize": 14,
-                        "labelColor": "#555",
+                        "labelColor": "#555555cd",
                         "padding": 0
                     }
                 },

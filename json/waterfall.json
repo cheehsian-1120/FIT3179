@@ -82,11 +82,11 @@
             "axis": {
                 "labelAngle": 0,
                 "title": "Area of Expenditure",
-                "titleColor": "#444",
+                "titleColor": "#555555cd",
                 "titleFontSize": 16,
                 "titlePadding": 15,
                 "labelFontSize": 13,
-                "labelColor": "#555",
+                "labelColor": "#555555cd",
                 "labelPadding": 10,
                 "labelLineHeight": 14,
                 "labelExpr": "split(datum.value, ' ')",
@@ -113,10 +113,10 @@
                     "title": "Annual Expenditure (Billion AUD)",
                     "axis": {
                         "titleFontSize": 16,
-                        "titleColor": "#444",
+                        "titleColor": "#555555cd",
                         "titlePadding": 10,
                         "labelFontSize": 14,
-                        "labelColor": "#555",
+                        "labelColor": "#555555cd",
                         "grid": false
                     }
                 },
@@ -157,7 +157,7 @@
                 "dy": -5,
                 "fontSize": 12,
                 "fontWeight": "bold",
-                "color": "#333"
+                "color": "#555555cd"
             },
             "encoding": {
                 "y": {

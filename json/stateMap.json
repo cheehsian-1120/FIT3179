@@ -4,9 +4,11 @@
     "width": 800,
     "height": 600,
     "projection": {
-        "type": "mercator",
-        "center": [134, -28],
-        "scale": 860
+        "type": "conicEqualArea",
+        "parallels": [-18, -36],
+        "rotate": [-132, 0, 0],
+        "center": [4, -28], 
+        "scale": 900
     },
     "layer": [
         {
@@ -48,9 +50,9 @@
                         "orient": "bottom",
                         "direction": "horizontal",
                         "titleFontSize": 14.5,
-                        "titleColor": "#444",
+                        "titleColor": "#555555cd",
                         "labelFontSize": 13,
-                        "labelColor": "#555",
+                        "labelColor": "#555555cd",
                         "titleLimit": 500,
                         "gradientLength": 300,
                         "offset": -100,

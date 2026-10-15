@@ -10,7 +10,7 @@
             "title": {
                 "text": "Hospitalisations",
                 "fontSize": 16,
-                "color": "#4a4d4d",
+                "color": "#555555cd",
                 "offset": 10
             },
             "width": 388,
@@ -92,7 +92,7 @@
             "title": {
                 "text": "Deaths",
                 "fontSize": 16,
-                "color": "#4a4d4d",
+                "color": "#555555cd",
                 "offset": 10
             },
             "width": 388,

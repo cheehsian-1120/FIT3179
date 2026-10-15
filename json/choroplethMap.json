@@ -3,15 +3,14 @@
     "background": "transparent",
     "width": 800,
     "height": 600,
+    "autosize": "none",
     "padding": {"bottom": 10},
     "projection": {
-        "type": "mercator",
-        "center": {
-            "expr": "State_Selection == 'New South Wales' ? [146, -32.5] : State_Selection == 'Victoria' ? [144.5, -36.5] : State_Selection == 'Queensland' ? [144, -22] : State_Selection == 'South Australia' ? [135, -30] : State_Selection == 'Western Australia' ? [122, -25] : State_Selection == 'Tasmania' ? [146.5, -42] : State_Selection == 'Northern Territory' ? [133.5, -20] : State_Selection == 'Australian Capital Territory' ? [149.1, -35.5] : [134, -28]"
-        },
-        "scale": {
-            "expr": "State_Selection == 'New South Wales' ? 2200 : State_Selection == 'Victoria' ? 3800 : State_Selection == 'Queensland' ? 1200 : State_Selection == 'South Australia' ? 1500 : State_Selection == 'Western Australia' ? 950 : State_Selection == 'Tasmania' ? 5000 : State_Selection == 'Northern Territory' ? 1300 : State_Selection == 'Australian Capital Territory' ? 25000 : 830"
-        }
+        "type": "conicEqualArea",
+        "parallels": [-18, -36],
+        "rotate": [-132, 0, 0],
+        "center": [4, -28], 
+        "scale": 900
     },
     "params": [
         {
@@ -63,9 +62,6 @@
                 },
                 {
                     "filter": "isValid(datum.State)"
-                },
-                {
-                    "filter": "State_Selection == 'All' || datum.properties.STE_NAME21 == State_Selection"
                 }
             ],
             "mark": {
@@ -75,25 +71,29 @@
             },
             "encoding": {
                 "color": {
-                    "field": "Heart_Disease_ASR_100k",
-                    "type": "quantitative",
-                    "scale": {
-                        "scheme": "reds",
-                        "domain": [0, 20.0] 
+                    "condition": {
+                        "test": "State_Selection == 'All' || datum.properties.STE_NAME21 == State_Selection",
+                        "field": "Heart_Disease_ASR_100k",
+                        "type": "quantitative",
+                        "scale": {
+                            "scheme": "reds",
+                            "domain": [0, 20.0] 
+                        },
+                        "legend": {
+                            "title": "Age-Standardize Rate (per 100k)",
+                            "orient": "bottom",
+                            "direction": "horizontal",
+                            "titleFontSize": 14.5,
+                            "titleColor": "#444",
+                            "labelFontSize": 13,
+                            "labelColor": "#555",
+                            "titleLimit": 400,
+                            "gradientLength": 250,
+                            "offset": -110,
+                            "padding": 40
+                        }
                     },
-                    "legend": {
-                        "title": "Age-Standardize Rate (per 100k)",
-                        "orient": "bottom",
-                        "direction": "horizontal",
-                        "titleFontSize": 14.5,
-                        "titleColor": "#444",
-                        "labelFontSize": 13,
-                        "labelColor": "#555",
-                        "titleLimit": 400,
-                        "gradientLength": 250,
-                        "offset": -110,
-                        "padding": 40
-                    }
+                    "value": "#eaeaea"
                 },
                 "tooltip": [
                     {"field": "State", "title": "State"},
@@ -113,9 +113,6 @@
             "transform": [
                 {
                     "filter": "datum.properties.STE_NAME21 != 'Other Territories' && datum.properties.STE_NAME21 != 'Outside Australia'"
-                },
-                {
-                    "filter": "State_Selection == 'All' || datum.properties.STE_NAME21 == State_Selection"
                 }
             ],
             "mark": {
@@ -123,6 +120,15 @@
                 "fill": null,
                 "stroke": "black",
                 "strokeWidth": 0.6
+            },
+            "encoding": {
+                "opacity": {
+                    "condition": {
+                        "test": "State_Selection == 'All' || datum.properties.STE_NAME21 == State_Selection",
+                        "value": 1
+                    },
+                    "value": 0.15
+                }
             }
         }
     ],

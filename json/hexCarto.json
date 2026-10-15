@@ -90,9 +90,9 @@
                         "orient": "none",
                         "direction": "vertical",
                         "titleFontSize": 17,
-                        "titleColor": "#444",
+                        "titleColor": "#555555cd",
                         "labelFontSize": 15,
-                        "labelColor": "#555",
+                        "labelColor": "#555555cd",
                         "legendX": 20,
                         "legendY": 430
                     }

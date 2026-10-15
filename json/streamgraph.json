@@ -60,9 +60,9 @@
                 "titlePadding": 20,
                 "grid": false,
                 "labelAngle": 0,
-                "labelColor": "#555",
+                "labelColor": "#555555cd",
                 "titleFontSize": 16,
-                "titleColor": "#444",
+                "titleColor": "#555555cd",
                 "labelFontSize": 14
             }
         },
