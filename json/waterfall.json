@@ -126,9 +126,9 @@
                 "color": {
                     "condition": {
                         "test": "datum.Category_Raw == 'Total Expenditure'",
-                        "value": "#887f7c"
+                        "value": "#8c1527"
                     },
-                    "value": "#7d9cf0"
+                    "value": "#4a6b82"
                 },
                 "tooltip": [
                     {
