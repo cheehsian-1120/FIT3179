@@ -52,7 +52,7 @@
                             }
                         },
                         "color": {
-                            "value": "#80B1D3"
+                            "value": "#4a6b82"
                         },
                         "tooltip": [
                             {"field": "Cardiovascular Disease Subtype", "title": "Subtype"},
@@ -135,7 +135,7 @@
                             }
                         },
                         "color": {
-                            "value": "#FB8072"
+                            "value": "#8c1527"
                         },
                         "tooltip": [
                             {"field": "Cardiovascular Disease Subtype", "title": "Subtype"},

@@ -4,7 +4,6 @@
     "width": 800,
     "height": 600,
     "autosize": "none",
-    "padding": {"bottom": 10},
     "projection": {
         "type": "conicEqualArea",
         "parallels": [-18, -36],
@@ -76,7 +75,7 @@
                         "field": "Heart_Disease_ASR_100k",
                         "type": "quantitative",
                         "scale": {
-                            "scheme": "reds",
+                            "range": ["#fae6e1", "#f4a582", "#d6604d", "#b2182b", "#8c1527"],
                             "domain": [0, 20.0] 
                         },
                         "legend": {
@@ -90,7 +89,7 @@
                             "titleLimit": 400,
                             "gradientLength": 250,
                             "offset": -110,
-                            "padding": 40
+                            "padding": 20
                         }
                     },
                     "value": "#eaeaea"

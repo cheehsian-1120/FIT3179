@@ -43,7 +43,7 @@
                     "scale": {
                         "type": "linear",
                         "domain": [3.5, 5.0],
-                        "scheme": "reds"
+                        "range": ["#f4a582", "#d6604d", "#b2182b", "#8c1527"]
                     },
                     "legend": {
                         "title": "Age-Standardize Rate (per 100k)",
@@ -56,7 +56,7 @@
                         "titleLimit": 500,
                         "gradientLength": 300,
                         "offset": -100,
-                        "padding": 40
+                        "padding": 10
                     }
                 },
                 "tooltip": [

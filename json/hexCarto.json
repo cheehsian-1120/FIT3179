@@ -83,7 +83,7 @@
                     "field": "Active_Value",
                     "type": "quantitative",
                     "scale": {
-                        "scheme": "blues"
+                        "range": ["#f7c8bc", "#f4a582", "#d6604d", "#b2182b", "#8c1527"]
                     },
                     "legend": {
                         "title": "Prevalence (%)",
@@ -271,7 +271,7 @@
                         "test": "datum.Normalized_Intensity > 0.45",
                         "value": "white"
                     },
-                    "value": "#034b54"
+                    "value": "#3a0911"
                 },
                 "opacity": {
                     "condition": {
@@ -295,7 +295,7 @@
                         "type": "point",
                         "shape": "M -1 0 M 1 0 M 0 -1 L 0.866025 -0.5 L 0.866025 0.5 L 0 1 L -0.866025 0.5 L -0.866025 -0.5 Z",
                         "size": 1500,
-                        "color": "#206fb2",
+                        "color": "#b2182b",
                         "stroke": "#f4f7f6",
                         "strokeWidth": 1.5,
                         "filled": true

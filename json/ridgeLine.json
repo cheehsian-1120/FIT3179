@@ -82,7 +82,7 @@
                         "field": "Age_Sort",
                         "type": "quantitative",
                         "scale": {
-                            "scheme": "yellowgreen",
+                            "range": ["#f7dad0", "#e09f8c", "#c97a63", "#a65c47"],
                             "reverse": false
                         },
                         "legend": null
@@ -114,7 +114,7 @@
                 },
                 "mark": {
                     "type": "rule",
-                    "color": "#000000",
+                    "color": "#8c1527",
                     "strokeDash": [
                         6,
                         4
@@ -144,7 +144,7 @@
                     "baseline": "bottom",
                     "dx": -55,
                     "dy": -65,
-                    "color": "#000000",
+                    "color": "#8c1527",
                     "fontSize": 16,
                     "fontWeight": "normal",
                     "text": "Obesity Threshold"

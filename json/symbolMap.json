@@ -48,8 +48,8 @@
             },
             "mark": {
                 "type": "geoshape",
-                "fill": "#f0f0f0",
-                "stroke": "#cccccc",
+                "fill": "#e6e3df",
+                "stroke": "#c9c5c1",
                 "strokeWidth": 1.0
             }
         },
@@ -75,10 +75,10 @@
             ],
             "mark": {
                 "type": "circle",
-                "opacity": 0.4,
+                "opacity": 0.6,
                 "strokeWidth": 1.5,
-                "fill": "#e30000",
-                "stroke": "#b30000"
+                "fill": "#4a6b82",
+                "stroke": "#2a4050"
             },
             "encoding": {
                 "longitude": {
@@ -136,10 +136,10 @@
             ],
             "mark": {
                 "type": "circle",
-                "opacity": 0.4,
+                "opacity": 0.6,
                 "strokeWidth": 1.5,
-                "fill": "#fa750e",
-                "stroke": "#d95f02"
+                "fill": "#4a6b82",
+                "stroke": "#2a4050"
             },
             "encoding": {
                 "longitude": {
@@ -197,10 +197,10 @@
             ],
             "mark": {
                 "type": "circle",
-                "opacity": 0.4,
+                "opacity": 0.6,
                 "strokeWidth": 1.5,
-                "fill": "#25d09d",
-                "stroke": "#1b9e77"
+                "fill": "#4a6b82",
+                "stroke": "#2a4050"
             },
             "encoding": {
                 "longitude": {
@@ -258,10 +258,10 @@
             ],
             "mark": {
                 "type": "circle",
-                "opacity": 0.4,
+                "opacity": 0.6,
                 "strokeWidth": 1.5,
-                "fill": "#51aff7",
-                "stroke": "#227ec5"
+                "fill": "#4a6b82",
+                "stroke": "#2a4050"
             },
             "encoding": {
                 "longitude": {

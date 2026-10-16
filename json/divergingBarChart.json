@@ -57,7 +57,7 @@
             "type": "nominal",
             "scale": {
                 "domain": ["Males", "Females"],
-                "range": ["#66C2A5", "#8DA0CB"]
+                "range": ["#9a8f85", "#c97a63"]
             },
             "legend": {
                 "title": "Gender",

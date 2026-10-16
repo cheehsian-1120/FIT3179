@@ -78,8 +78,8 @@
                             "Fifth quintile"
                         ],
                         "range": [
-                            "#1f77b4",
-                            "#d62728"
+                            "#c97a63", 
+                            "#9a8f85"
                         ]
                     },
                     "legend": {
@@ -115,6 +115,7 @@
                 "type": "text",
                 "baseline": "middle",
                 "fontSize": 13,
+                "fontWeight": "bold",
                 "align": {
                     "expr": "datum['Income Quintile Clean'] == 'First quintile' ? 'left' : 'right'"
                 },
@@ -138,8 +139,8 @@
                             "Fifth quintile"
                         ],
                         "range": [
-                            "#1f77b4",
-                            "#d62728"
+                            "#c97a63", 
+                            "#9a8f85"
                         ]
                     }
                 }

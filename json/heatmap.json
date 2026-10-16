@@ -65,7 +65,7 @@
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
                 "labelColor": {
-                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#298d4a' : '#555'"
+                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#3d7a77' : '#555'"
                 },
                 "labelLimit": 500,
                 "domain": false,
@@ -97,7 +97,7 @@
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
                 "labelColor": {
-                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#298d4a' : '#555'"
+                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#3d7a77' : '#555'"
                 },
                 "labelLimit": 500,
                 "domain": false,
@@ -117,7 +117,7 @@
                     "field": "Probability",
                     "type": "quantitative",
                     "scale": {
-                        "scheme": "yellowgreen",
+                        "range": ["#e4ecea", "#699e9b", "#3d7a77"],
                         "domain": [
                             0,
                             50
