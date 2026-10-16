@@ -329,7 +329,7 @@
                         "format": ",.0f",
                         "direction": "vertical",
                         "titleFontSize": 15,
-                        "titleColor": "#555555cd",
+                        "titleColor": "#555",
                         "labelFontSize": 13,
                         "labelColor": "#555",
                         "symbolOpacity": 0.7 

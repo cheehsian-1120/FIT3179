@@ -82,11 +82,11 @@
             "axis": {
                 "labelAngle": 0,
                 "title": "Area of Expenditure",
-                "titleColor": "#555555cd",
+                "titleColor": "#555",
                 "titleFontSize": 16,
                 "titlePadding": 15,
                 "labelFontSize": 13,
-                "labelColor": "#555555cd",
+                "labelColor": "#555",
                 "labelPadding": 10,
                 "labelLineHeight": 14,
                 "labelExpr": "split(datum.value, ' ')",
@@ -113,10 +113,10 @@
                     "title": "Annual Expenditure (Billion AUD)",
                     "axis": {
                         "titleFontSize": 16,
-                        "titleColor": "#555555cd",
+                        "titleColor": "#555",
                         "titlePadding": 10,
                         "labelFontSize": 14,
-                        "labelColor": "#555555cd",
+                        "labelColor": "#555",
                         "grid": false
                     }
                 },
@@ -124,16 +124,11 @@
                     "field": "sum"
                 },
                 "color": {
-                    "field": "Category_Raw",
-                    "type": "nominal",
-                    "sort": {
-                        "field": "SortOrder",
-                        "order": "ascending"
+                    "condition": {
+                        "test": "datum.Category_Raw == 'Total Expenditure'",
+                        "value": "#887f7c"
                     },
-                    "scale": {
-                        "scheme": "tableau10"
-                    },
-                    "legend": null
+                    "value": "#7d9cf0"
                 },
                 "tooltip": [
                     {
@@ -157,7 +152,7 @@
                 "dy": -5,
                 "fontSize": 12,
                 "fontWeight": "bold",
-                "color": "#555555cd"
+                "color": "#555"
             },
             "encoding": {
                 "y": {

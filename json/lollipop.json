@@ -37,10 +37,10 @@
             "axis": {
                 "title": "Age Group",
                 "titleFontSize": 16,
-                "titleColor": "#555555cd",
+                "titleColor": "#555",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#555555cd",
+                "labelColor": "#555",
                 "labelPadding": 10,
                 "grid": false,
                 "domain": true,
@@ -53,10 +53,10 @@
             "axis": {
                 "title": "Total Dispensed Volume (PBS)",
                 "titleFontSize": 16,
-                "titleColor": "#555555cd",
+                "titleColor": "#555",
                 "titlePadding": 15,
                 "labelFontSize": 14,
-                "labelColor": "#555555cd",
+                "labelColor": "#555",
                 "grid": false,
                 "format": ".2s",
                 "tickCount": 8
@@ -72,11 +72,7 @@
             },
             "encoding": {
                 "color": {
-                    "condition": {
-                        "test": "datum['Medication Dispensed'] == datum['Max_Value']",
-                        "value": "#d67195"
-                    },
-                    "value": "#fcbfd2"
+                    "value": "#d67195"
                 }
             }
         },
@@ -88,11 +84,7 @@
             },
             "encoding": {
                 "color": {
-                    "condition": {
-                        "test": "datum['Medication Dispensed'] == datum['Max_Value']",
-                        "value": "#d67195"
-                    },
-                    "value": "#fcbfd2"
+                    "value": "#d67195"
                 },
                 "tooltip": [
                     {
@@ -115,9 +107,7 @@
                 "dx": 16,
                 "fontSize": 13,
                 "color": "#495057",
-                "fontWeight": {
-                    "expr": "datum['Medication Dispensed'] == datum['Max_Value'] ? 'bold' : 'normal'"
-                }
+                "fontWeight": "normal"
             },
             "encoding": {
                 "text": {

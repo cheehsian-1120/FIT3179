@@ -10,7 +10,7 @@
             "title": {
                 "text": "Hospitalisations",
                 "fontSize": 16,
-                "color": "#555555cd",
+                "color": "#555",
                 "offset": 10
             },
             "width": 388,
@@ -67,7 +67,7 @@
                         "baseline": "middle",
                         "dx": 5,
                         "fontSize": 12.5,
-                        "fill": "#555"
+                        "color": "#555"
                     },
                     "encoding": {
                         "y": {
@@ -92,7 +92,7 @@
             "title": {
                 "text": "Deaths",
                 "fontSize": 16,
-                "color": "#555555cd",
+                "color": "#555",
                 "offset": 10
             },
             "width": 388,
@@ -150,7 +150,7 @@
                         "baseline": "middle",
                         "dx": 5,
                         "fontSize": 12.5,
-                        "fill": "black"
+                        "color": "#555"
                     },
                     "encoding": {
                         "y": {

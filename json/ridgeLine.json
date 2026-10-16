@@ -21,18 +21,18 @@
             "header": {
                 "title": "Age Groups",
                 "titleFontSize": 16,
-                "titleColor": "#555555cd",
+                "titleColor": "#555",
                 "titlePadding": 10,
                 "labelAngle": 0,
                 "labelAlign": "left",
                 "labelFontSize": 14,
-                "labelColor": "#555555cd",
+                "labelColor": "#555",
                 "labelPadding": 15
             }
         }
     },
     "spec": {
-        "width": 580,
+        "width": 900,
         "height": 60,
         "layer": [
             {
@@ -60,9 +60,9 @@
                             "grid": false,
                             "tickCount": 6,
                             "labelFontSize": 14,
-                            "labelColor": "#555555cd",
+                            "labelColor": "#555",
                             "titleFontSize": 16,
-                            "titleColor": "#555555cd",
+                            "titleColor": "#555",
                             "titlePadding": 15
                         }
                     },
@@ -114,7 +114,7 @@
                 },
                 "mark": {
                     "type": "rule",
-                    "color": "#e63946",
+                    "color": "#000000",
                     "strokeDash": [
                         6,
                         4
@@ -143,8 +143,8 @@
                     "align": "left",
                     "baseline": "bottom",
                     "dx": -55,
-                    "dy": -60,
-                    "color": "#e63946",
+                    "dy": -65,
+                    "color": "#000000",
                     "fontSize": 16,
                     "fontWeight": "normal",
                     "text": "Obesity Threshold"

@@ -83,16 +83,16 @@
                     "field": "Active_Value",
                     "type": "quantitative",
                     "scale": {
-                        "scheme": "tealblues"
+                        "scheme": "blues"
                     },
                     "legend": {
                         "title": "Prevalence (%)",
                         "orient": "none",
                         "direction": "horizontal",
                         "titleFontSize": 17,
-                        "titleColor": "#555555cd",
+                        "titleColor": "#444",
                         "labelFontSize": 15,
-                        "labelColor": "#555555cd",
+                        "labelColor": "#555",
                         "legendX": 20,
                         "legendY": 600,
                         "gradientLength": 220
@@ -295,7 +295,7 @@
                         "type": "point",
                         "shape": "M -1 0 M 1 0 M 0 -1 L 0.866025 -0.5 L 0.866025 0.5 L 0 1 L -0.866025 0.5 L -0.866025 -0.5 Z",
                         "size": 1500,
-                        "color": "#409ab5",
+                        "color": "#206fb2",
                         "stroke": "#f4f7f6",
                         "strokeWidth": 1.5,
                         "filled": true

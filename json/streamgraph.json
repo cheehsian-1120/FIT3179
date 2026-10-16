@@ -60,9 +60,9 @@
                 "titlePadding": 20,
                 "grid": false,
                 "labelAngle": 0,
-                "labelColor": "#555555cd",
+                "labelColor": "#555",
                 "titleFontSize": 16,
-                "titleColor": "#555555cd",
+                "titleColor": "#555",
                 "labelFontSize": 14
             }
         },
@@ -70,13 +70,35 @@
             "field": "Mortality_Rate",
             "type": "quantitative",
             "stack": "center",
-            "axis": null
+            "axis": {
+                "title": "Age-Standardised Rate",
+                "tickCount": 6,
+                "titlePadding": 20,
+                "grid": false,
+                "gridColor": "#eaeaea",
+                "labelAngle": 0,
+                "labelColor": "#555",
+                "titleFontSize": 16,
+                "titleColor": "#555",
+                "labelFontSize": 14
+            }
         },
         "color": {
             "field": "Condition",
             "type": "nominal",
             "scale": {
-                "scheme": "set2"
+                "domain": [
+                    "Coronary Heart Disease",
+                    "Stroke",
+                    "Heart Failure and Cardiomyopathy",
+                    "Other"
+                ],
+                "range": [
+                    "#66c2a5", 
+                    "#fc8d62", 
+                    "#8da0cb", 
+                    "#949292"  
+                ]
             },
             "sort": [
                 "Coronary Heart Disease",

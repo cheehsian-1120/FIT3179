@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background": "transparent",
-    "width": {"step": 39},
-    "height": {"step": 39},
+    "width": {"step": 50},
+    "height": {"step": 50},
     "data": {
         "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/graph_3.csv"
     },
@@ -56,14 +56,16 @@
             ],
             "axis": {
                 "labelAngle": -45,
-                "labelFontSize": 14,
+                "labelFontSize": {
+                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 16 : 15"
+                },
                 "labelLineHeight": 14,
                 "labelAlign": "right",
                 "labelFontWeight": {
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
                 "labelColor": {
-                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#28a99e' : '#555'"
+                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#298d4a' : '#555'"
                 },
                 "labelLimit": 500,
                 "domain": false,
@@ -87,13 +89,15 @@
                 "Osteoporosis"
             ],
             "axis": {
-                "labelFontSize": 14,
+                "labelFontSize": {
+                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 16 : 15"
+                },
                 "labelLineHeight": 14,
                 "labelFontWeight": {
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
                 "labelColor": {
-                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#28a99e' : '#555'"
+                    "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? '#298d4a' : '#555'"
                 },
                 "labelLimit": 500,
                 "domain": false,
@@ -113,7 +117,7 @@
                     "field": "Probability",
                     "type": "quantitative",
                     "scale": {
-                        "scheme": "teals",
+                        "scheme": "yellowgreen",
                         "domain": [
                             0,
                             50
@@ -123,9 +127,9 @@
                         "title": "Probability (%)",
                         "orient": "right",
                         "titleFontSize": 15,
-                        "titleColor": "#555555cd",
+                        "titleColor": "#444",
                         "labelFontSize": 12,
-                        "labelColor": "#555555cd",
+                        "labelColor": "#555",
                         "gradientLength": 200
                     }
                 },
