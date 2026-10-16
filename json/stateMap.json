@@ -99,7 +99,7 @@
         {
             "data": {
                 "values": [
-                    {"state": "Australian Capital Territory", "label": "Canberra", "lon": 150.3, "lat": -36}
+                    {"state": "Australian Capital Territory", "label": "Canberra", "lon": 150.3, "lat": -36.5}
                 ]
             },
             "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 30, "dy": -10, "fontSize": 12, "fontWeight": "bold", "fill": "#333333"},

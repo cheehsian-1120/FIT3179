@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background": "transparent",
-    "width": 335,
-    "height": 335,
+    "width": {"step": 39},
+    "height": {"step": 39},
     "data": {
         "url": "https://raw.githubusercontent.com/cheehsian-1120/FIT3179/main/data/graph_3.csv"
     },
@@ -37,11 +37,6 @@
             "filter": "datum.Primary_Index > datum.Secondary_Index"
         }
     ],
-    "mark": {
-        "type": "rect",
-        "stroke": "white",
-        "strokeWidth": 2
-    },
     "encoding": {
         "x": {
             "field": "Secondary_Condition",
@@ -62,6 +57,8 @@
             "axis": {
                 "labelAngle": -45,
                 "labelFontSize": 14,
+                "labelLineHeight": 14,
+                "labelAlign": "right",
                 "labelFontWeight": {
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
@@ -91,6 +88,7 @@
             ],
             "axis": {
                 "labelFontSize": 14,
+                "labelLineHeight": 14,
                 "labelFontWeight": {
                     "expr": "datum.value === 'Heart, Stroke and Vascular Disease' ? 'bold' : 'normal'"
                 },
@@ -101,44 +99,74 @@
                 "domain": false,
                 "ticks": false
             }
-        },
-        "color": {
-            "field": "Probability",
-            "type": "quantitative",
-            "scale": {
-                "scheme": "teals",
-                "domain": [
-                    0,
-                    50
-                ]
-            },
-            "legend": {
-                "title": "Probability (%)",
-                "orient": "right",
-                "titleFontSize": 15,
-                "titleColor": "#444",
-                "labelFontSize": 12,
-                "labelColor": "#555",
-                "gradientLength": 200
-            }
-        },
-        "tooltip": [
-            {
-                "field": "Comorbidity Condition",
-                "title": "Primary Condition"
-            },
-            {
-                "field": "Secondary_Condition",
-                "title": "Secondary Condition"
-            },
-            {
-                "field": "Probability",
-                "type": "quantitative",
-                "format": ".1f",
-                "title": "Probability (%)"
-            }
-        ]
+        }
     },
+    "layer": [
+        {
+            "mark": {
+                "type": "rect",
+                "stroke": "white",
+                "strokeWidth": 2
+            },
+            "encoding": {
+                "color": {
+                    "field": "Probability",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "teals",
+                        "domain": [
+                            0,
+                            50
+                        ]
+                    },
+                    "legend": {
+                        "title": "Probability (%)",
+                        "orient": "right",
+                        "titleFontSize": 15,
+                        "titleColor": "#555555cd",
+                        "labelFontSize": 12,
+                        "labelColor": "#555555cd",
+                        "gradientLength": 200
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Comorbidity Condition",
+                        "title": "Primary Condition"
+                    },
+                    {
+                        "field": "Secondary_Condition",
+                        "title": "Secondary Condition"
+                    },
+                    {
+                        "field": "Probability",
+                        "type": "quantitative",
+                        "format": ".1f",
+                        "title": "Probability (%)"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "color": "white"
+            },
+            "encoding": {
+                "text": {
+                    "condition": {
+                        "test": "(datum['Comorbidity Condition'] == 'Heart, Stroke and Vascular Disease' || datum.Secondary_Condition == 'Heart, Stroke and Vascular Disease') && datum.Probability > 30",
+                        "field": "Probability",
+                        "type": "quantitative",
+                        "format": ".0f"
+                    },
+                    "value": ""
+                }
+            }
+        }
+    ],
     "config": {
         "view": {
             "stroke": "transparent"
