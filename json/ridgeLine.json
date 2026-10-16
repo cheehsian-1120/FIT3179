@@ -82,7 +82,7 @@
                         "field": "Age_Sort",
                         "type": "quantitative",
                         "scale": {
-                            "scheme": "purples",
+                            "scheme": "yellowgreen",
                             "reverse": false
                         },
                         "legend": null
