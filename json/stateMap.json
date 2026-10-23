@@ -7,7 +7,7 @@
         "type": "conicEqualArea",
         "parallels": [-18, -36],
         "rotate": [-132, 0, 0],
-        "center": [4, -28], 
+        "center": [0, -28.5], 
         "scale": 900
     },
     "layer": [
@@ -47,14 +47,16 @@
                     },
                     "legend": {
                         "title": "Age-Standardize Rate (per 100k)",
-                        "orient": "bottom",
+                        "orient": "none",
+                        "legendX": 120,
+                        "legendY": 490,
                         "direction": "horizontal",
                         "titleFontSize": 14.5,
                         "titleColor": "#444",
                         "labelFontSize": 13,
                         "labelColor": "#555",
                         "titleLimit": 500,
-                        "gradientLength": 300,
+                        "gradientLength": 220,
                         "offset": -100,
                         "padding": 10
                     }
